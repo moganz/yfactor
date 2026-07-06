@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y Factor — Ask Y first.</title>
+<meta name="description" content="Y Factor is agentic AI for manufacturing data comprehension — agents that ask why first, trace answers through machine and production data, and turn them into decisions.">
+<meta name="theme-color" content="#F5EFE6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111111'/%3E%3Cpath d='M10 7l6 7 6-7' stroke='%23F5EFE6' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 14v6' stroke='%23F5EFE6' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='25.5' r='2.6' fill='%23D97706'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<noscript>
+<style>
+  [data-kinetic] .k-l{opacity:1;transform:none}
+  [data-kinetic] .k-dot{transform:translateX(-50%) scale(1)}
+  .hr{opacity:1;transform:none;animation:none}
+  .reveal{opacity:1;transform:none}
+  svg .draw{stroke-dasharray:none;stroke-dashoffset:0}
+</style>
+</noscript>
+</head>
+<body id="top">
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Y Factor home">
+      <!-- The Y that asks: a question mark's anatomy — the Y suspended over its dot. Dot is always Ignition. -->
+      <svg class="brand-mark" viewBox="0 0 26 30" fill="none" aria-hidden="true">
+        <path d="M6 4 L13 12.5 L20 4" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M13 12.5 V19.5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="13" cy="26" r="2.6" fill="#D97706"/>
+      </svg>
+      Y Factor
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#why">Why Y Factor</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#features">Features</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="#demo">Book a demo</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="margin:auto"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mmenu" id="mmenu">
+    <a href="#why">Why Y Factor</a>
+    <a href="#services">Services</a>
+    <a href="#platform">Platform</a>
+    <a href="#industries">Industries</a>
+    <a href="#features">Features</a>
+    <a href="#demo" style="color:var(--ember-text);font-weight:700">Book a demo</a>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <!-- Signature geometry: two production streams converge at a junction into one output line — a Y drawn as factory flow -->
+  <svg class="hero-art" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <pattern id="dots" width="36" height="36" patternUnits="userSpaceOnUse">
+        <circle cx="1.5" cy="1.5" r="1.3" fill="#6B4F3B" opacity="0.10"/>
+      </pattern>
+    </defs>
+    <rect width="1440" height="900" fill="url(#dots)"/>
+    <!-- floor lines -->
+    <path d="M0 720H1440" stroke="#6B4F3B" stroke-opacity="0.06"/>
+    <path d="M0 800H1440" stroke="#6B4F3B" stroke-opacity="0.05"/>
+    <!-- left arm (input stream) -->
+    <path d="M-40 -60 L704 612" stroke="#6B4F3B" stroke-opacity="0.09"/>
+    <path d="M60 10 L720 620" stroke="#6B4F3B" stroke-opacity="0.16" stroke-width="1.25"/>
+    <path d="M160 80 L736 628" stroke="#6B4F3B" stroke-opacity="0.09"/>
+    <!-- right arm (input stream) -->
+    <path d="M1480 -60 L736 612" stroke="#6B4F3B" stroke-opacity="0.09"/>
+    <path d="M1380 10 L720 620" stroke="#6B4F3B" stroke-opacity="0.16" stroke-width="1.25"/>
+    <path d="M1280 80 L704 628" stroke="#6B4F3B" stroke-opacity="0.09"/>
+    <!-- output stem (yield) -->
+    <path d="M704 612V900" stroke="#6B4F3B" stroke-opacity="0.09"/>
+    <path d="M720 620V900" stroke="#6B4F3B" stroke-opacity="0.16" stroke-width="1.25"/>
+    <path d="M736 628V900" stroke="#6B4F3B" stroke-opacity="0.09"/>
+    <!-- machine nodes along the arms -->
+    <rect x="265" y="199" width="12" height="12" rx="2.5" fill="#FBF7F0" stroke="#6B4F3B" stroke-opacity="0.45"/>
+    <rect x="463" y="382" width="12" height="12" rx="2.5" fill="#FBF7F0" stroke="#6B4F3B" stroke-opacity="0.45"/>
+    <rect x="1163" y="199" width="12" height="12" rx="2.5" fill="#FBF7F0" stroke="#6B4F3B" stroke-opacity="0.45"/>
+    <rect x="965" y="382" width="12" height="12" rx="2.5" fill="#FBF7F0" stroke="#6B4F3B" stroke-opacity="0.45"/>
+    <circle cx="720" cy="740" r="2.2" fill="#6B4F3B" opacity="0.3"/>
+    <circle cx="720" cy="820" r="2.2" fill="#6B4F3B" opacity="0.3"/>
+    <!-- data flow into and out of the junction -->
+    <path class="flow-line anim" d="M60 10 L720 620" stroke="#D97706" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="2 10"/>
+    <path class="flow-line anim" d="M1380 10 L720 620" stroke="#D97706" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="2 10"/>
+    <path class="flow-line anim" d="M720 620V900" stroke="#D97706" stroke-opacity="0.45" stroke-width="1.75" stroke-dasharray="3 9"/>
+    <!-- data packets travelling to the junction and down the stem -->
+    <circle class="anim" r="3" fill="#D97706" opacity="0.5">
+      <animateMotion dur="7s" repeatCount="indefinite" path="M60 10 L720 620"/>
+    </circle>
+    <circle class="anim" r="2.4" fill="#6B4F3B" opacity="0.4">
+      <animateMotion dur="9s" begin="-4.5s" repeatCount="indefinite" path="M160 80 L736 628"/>
+    </circle>
+    <circle class="anim" r="3" fill="#6B4F3B" opacity="0.4">
+      <animateMotion dur="8s" begin="-2.5s" repeatCount="indefinite" path="M1380 10 L720 620"/>
+    </circle>
+    <circle class="anim" r="2.4" fill="#D97706" opacity="0.45">
+      <animateMotion dur="10s" begin="-6s" repeatCount="indefinite" path="M1280 80 L704 628"/>
+    </circle>
+    <circle class="anim" r="3.4" fill="#D97706" opacity="0.65">
+      <animateMotion dur="3.8s" begin="-1s" repeatCount="indefinite" path="M720 620 L720 900"/>
+    </circle>
+    <!-- the junction: where the question gets asked -->
+    <circle cx="720" cy="620" r="4.5" fill="#D97706"/>
+    <circle class="anim" cx="720" cy="620" r="5" fill="none" stroke="#D97706" stroke-width="1.5">
+      <animate attributeName="r" values="5;18" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;0" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow hr hr-1">Agentic AI · Manufacturing data comprehension</p>
+
+      <!-- Kinetic wordmark: FACTORY, taken apart -->
+      <div class="kinetic k-hero" data-kinetic data-autoplay role="img" aria-label="Factory, taken apart: Y Factor">
+        <span class="k-row">
+          <span class="k-l k-y" data-ch="Y" style="--i:6"><span class="k-in">Y<i class="k-dot"></i></span></span>
+          <span class="k-sp"></span>
+          <span class="k-l" data-ch="F" style="--i:0"><span class="k-in">F</span></span>
+          <span class="k-l" data-ch="A" style="--i:1"><span class="k-in">A</span></span>
+          <span class="k-l" data-ch="C" style="--i:2"><span class="k-in">C</span></span>
+          <span class="k-l" data-ch="T" style="--i:3"><span class="k-in">T</span></span>
+          <span class="k-l" data-ch="O" style="--i:4"><span class="k-in">O</span></span>
+          <span class="k-l" data-ch="R" style="--i:5"><span class="k-in">R</span></span>
+        </span>
+      </div>
+
+      <h1 class="hr hr-2">Ask Y first.</h1>
+      <p class="lede hr hr-3">Y Factor builds agents that make production data effortless to understand — they ask why first, trace the answer through your machines and shifts, and turn it into a decision your team can act on before the shift ends.</p>
+      <div class="btn-row hr hr-4">
+        <a class="btn btn-primary" href="#demo">Book a demo</a>
+        <a class="btn btn-ghost" href="#platform">See the platform</a>
+      </div>
+      <p class="micro hr hr-4"><b>Works with the machines and ERP you already run.</b> No rip-and-replace, no new hardware to start.</p>
+    </div>
+
+    <!-- Hero Dashboard Widget -->
+    <div class="dash-wrap hr hr-5">
+      <div class="dash" role="img" aria-label="Y Factor plant overview dashboard showing OEE, production trend, an AI recommendation and machine status">
+        <div class="dash-head">
+          <span class="dash-title"><span class="live-dot" aria-hidden="true"></span>Plant overview — live</span>
+          <span class="shift-chip">Shift B · 14:20</span>
+        </div>
+        <div class="dash-body">
+          <p class="num-label">OEE — Overall equipment effectiveness</p>
+          <p class="kbig"><span class="count" data-val="78.4" data-dec="1">0</span><small>%</small></p>
+          <p class="kdelta"><b>▲ +2.1 pts</b> vs last week · availability 91.2 · performance 88.7 · quality 96.9</p>
+
+          <div class="chart-wrap">
+            <p class="num-label">Production trend — units / hr, last 24 h</p>
+            <svg viewBox="0 0 340 112" width="100%" height="112" aria-hidden="true">
+              <line x1="0" y1="28" x2="340" y2="28" stroke="#F0E9DC" stroke-width="1"/>
+              <line x1="0" y1="56" x2="340" y2="56" stroke="#F0E9DC" stroke-width="1"/>
+              <line x1="0" y1="84" x2="340" y2="84" stroke="#F0E9DC" stroke-width="1"/>
+              <path d="M0,86 C34,80 52,72 86,74 C120,76 138,58 172,60 C206,62 224,44 258,40 C292,36 316,26 340,22 L340,112 L0,112 Z" fill="rgba(217,119,6,.10)"/>
+              <path class="draw" pathLength="1" d="M0,86 C34,80 52,72 86,74 C120,76 138,58 172,60 C206,62 224,44 258,40 C292,36 316,26 340,22" fill="none" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="340" cy="22" r="3.6" fill="#D97706"/>
+            </svg>
+          </div>
+
+          <div class="hero-rec">
+            <p class="rec-tag">Why is Winder 4 vibrating?</p>
+            <p>Vibration is trending <b>+8% over 6 hours</b>, consistent with early bearing wear. A bearing inspection within 48 hours avoids an unplanned stop.</p>
+            <a href="#demo">Create work order →</a>
+          </div>
+
+          <div class="status-row" aria-label="Machine status">
+            <span class="schip"><i></i>Line 1 · Running</span>
+            <span class="schip"><i></i>Line 2 · Running</span>
+            <span class="schip warn"><i></i>Winder 4 · Attention</span>
+            <span class="schip"><i></i>Line 3 · Running</span>
+            <span class="schip idle"><i></i>Packing · Idle</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ COVERAGE STRIP ============ -->
+<section class="strip" aria-label="Industry coverage">
+  <div class="container">
+    <p class="strip-label">Built for the plants that make everything else</p>
+    <p class="strip-items"><span>General manufacturing</span><i>·</i><span>FMCG</span><i>·</i><span>Automotive components</span><i>·</i><span>Textile mills</span><i>·</i><span>Yarn</span><i>·</i><span>Fabric processing</span></p>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="stats-grid reveal" id="statsGrid">
+    <div class="stat">
+      <div class="stat-num"><span class="count" data-val="17" data-dec="0">0</span><span class="unit">%</span></div>
+      <div class="stat-label">Average downtime reduction</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span class="count" data-val="9.4" data-dec="1">0</span><span class="unit">%</span></div>
+      <div class="stat-label">OEE uplift in first quarter</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">&lt;90 <span class="unit">days</span></div>
+      <div class="stat-label">To first measurable ROI</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Agents watching every line</div>
+    </div>
+  </div>
+  <div class="stats-note">Illustrative of targeted deployment outcomes.</div>
+</div>
+
+<!-- ============ WHY Y FACTOR ============ -->
+<section class="sec why" id="why">
+  <svg class="ghost-y" width="340" height="420" viewBox="0 0 200 260" fill="none" aria-hidden="true">
+    <path d="M28 18 L100 120 L172 18" stroke="#6B4F3B" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M100 120 V200" stroke="#6B4F3B" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="100" cy="238" r="11" fill="#6B4F3B"/>
+  </svg>
+  <div class="container">
+    <!-- The take-apart, replayed where the story is told -->
+    <div class="why-take reveal">
+      <div class="kinetic k-why" data-kinetic data-inview role="img" aria-label="Factory, taken apart: Y Factor">
+        <span class="k-row">
+          <span class="k-l k-y" data-ch="Y" style="--i:6"><span class="k-in">Y<i class="k-dot"></i></span></span>
+          <span class="k-sp"></span>
+          <span class="k-l" data-ch="F" style="--i:0"><span class="k-in">F</span></span>
+          <span class="k-l" data-ch="A" style="--i:1"><span class="k-in">A</span></span>
+          <span class="k-l" data-ch="C" style="--i:2"><span class="k-in">C</span></span>
+          <span class="k-l" data-ch="T" style="--i:3"><span class="k-in">T</span></span>
+          <span class="k-l" data-ch="O" style="--i:4"><span class="k-in">O</span></span>
+          <span class="k-l" data-ch="R" style="--i:5"><span class="k-in">R</span></span>
+        </span>
+      </div>
+      <p class="k-caption">Factory, taken apart: F A C T O R Y <span aria-hidden="true">→</span> Y Factor</p>
+      <button class="k-replay" id="replayWhy" type="button">Replay the take-apart</button>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-copy reveal">
+        <p class="eyebrow">Why Y Factor — the name is the method</p>
+        <h2>Why is the Y first?</h2>
+        <p>Every factory runs on factors — men, machines, materials, methods. Most plants still run without the fifth one: the question <b>why</b>.</p>
+        <p>The name says how we work. Take <b>factory</b> apart and pull the <b>Y</b> to the front — what remains is <b>factor</b>. Y Factor puts the question before the plant: why did the line slow, why did quality drift, why does Shift B run different. Then it answers, with the data attached.</p>
+      </div>
+      <div class="reveal d2">
+        <svg viewBox="0 0 480 420" width="100%" role="img" aria-label="Two data streams — machine data and operations data — converge into a single decision path feeding the factory floor">
+          <defs>
+            <pattern id="bgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M40 0H0V40" fill="none" stroke="rgba(107,79,59,.08)" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="480" height="420" rx="16" fill="url(#bgrid)"/>
+          <!-- ghost Y -->
+          <path d="M96,52 L240,204 M384,52 L240,204 M240,204 V336" stroke="rgba(217,119,6,.08)" stroke-width="34" stroke-linecap="round" fill="none"/>
+          <!-- arms + stem -->
+          <path class="draw" pathLength="1" d="M96,52 L240,204" stroke="#6B4F3B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path class="draw" pathLength="1" d="M384,52 L240,204" stroke="#6B4F3B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path class="draw" pathLength="1" d="M240,204 V336" stroke="#6B4F3B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- data packets on arms -->
+          <circle cx="132" cy="90" r="4" fill="#D97706"/><circle cx="168" cy="128" r="4" fill="#D97706" opacity=".7"/><circle cx="204" cy="166" r="4" fill="#D97706" opacity=".45"/>
+          <circle cx="348" cy="90" r="4" fill="#6B4F3B"/><circle cx="312" cy="128" r="4" fill="#6B4F3B" opacity=".7"/><circle cx="276" cy="166" r="4" fill="#6B4F3B" opacity=".45"/>
+          <!-- junction -->
+          <circle cx="240" cy="204" r="13" fill="none" stroke="#D97706" stroke-width="1.6" opacity=".55"/>
+          <circle cx="240" cy="204" r="6.5" fill="#D97706"/>
+          <!-- source labels -->
+          <rect x="42" y="20" width="120" height="26" rx="13" fill="#F5EFE6" stroke="#E7DECF"/>
+          <text x="102" y="37" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#6B4F3B">MACHINE DATA</text>
+          <rect x="322" y="20" width="128" height="26" rx="13" fill="#F5EFE6" stroke="#E7DECF"/>
+          <text x="386" y="37" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#6B4F3B">OPERATIONS DATA</text>
+          <text x="262" y="276" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="#93430A">DECISION</text>
+          <!-- arrow into floor -->
+          <path d="M240,336 l-6,-9 h12 z" fill="#6B4F3B"/>
+          <!-- factory floor grid -->
+          <g>
+            <rect x="154" y="352" width="30" height="20" rx="5" fill="#fff" stroke="#E7DECF"/>
+            <rect x="190" y="352" width="30" height="20" rx="5" fill="#F5EFE6" stroke="#E7DECF"/>
+            <rect x="226" y="352" width="30" height="20" rx="5" fill="#D97706" opacity=".85"/>
+            <rect x="262" y="352" width="30" height="20" rx="5" fill="#fff" stroke="#E7DECF"/>
+            <rect x="298" y="352" width="30" height="20" rx="5" fill="#F5EFE6" stroke="#E7DECF"/>
+            <rect x="154" y="378" width="30" height="20" rx="5" fill="#F5EFE6" stroke="#E7DECF"/>
+            <rect x="190" y="378" width="30" height="20" rx="5" fill="#fff" stroke="#E7DECF"/>
+            <rect x="226" y="378" width="30" height="20" rx="5" fill="#fff" stroke="#E7DECF"/>
+            <rect x="262" y="378" width="30" height="20" rx="5" fill="#F5EFE6" stroke="#E7DECF"/>
+            <rect x="298" y="378" width="30" height="20" rx="5" fill="#fff" stroke="#E7DECF"/>
+          </g>
+        </svg>
+        <p class="ycap">Two streams — machine data and operations data — one decision path to the floor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="sec sec-tight" id="services" style="background:linear-gradient(180deg,rgba(245,239,230,.35),rgba(245,239,230,0) 30%)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Services — what we build</p>
+      <h2>Six ways plants put Y Factor to work</h2>
+      <p class="sub">Start with one line or one problem. Expand when the numbers earn it.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="8" height="10" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="15" width="8" height="6" rx="2"/></svg></div>
+        <h3>AI Dashboards</h3>
+        <p>Live visibility across lines, shifts, and machines — on one screen supervisors actually check.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17l5-6 4 3 6-8"/><path d="M15 6h3v3"/><path d="M3 21h18"/></svg></div>
+        <h3>Predictive Analytics</h3>
+        <p>Forecast output, quality drift, and failures days before they reach the floor.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 7V4"/><circle cx="12" cy="3" r="1"/><path d="M9 12h.01M15 12h.01"/><path d="M9.5 15.5c.8.6 4.2.6 5 0"/></svg></div>
+        <h3>AI Agents</h3>
+        <p>Agents that watch every line around the clock and ask why before a busy team has to.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6.5 7.5L10.5 16M17.5 7.5L13.5 16M7 6h10"/></svg></div>
+        <h3>Process Intelligence</h3>
+        <p>Find the bottleneck, the slow changeover, the shift that runs different — with evidence.</p>
+      </div>
+      <div class="card reveal d1">
+        <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 13l3.5-3.5"/><path d="M12 5V3M9 3h6"/></svg></div>
+        <h3>Production Insights</h3>
+        <p>KPIs with a recommended action attached — not just a number that turned red.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></div>
+        <h3>Custom AI Solutions</h3>
+        <p>Purpose-built models for problems specific to your plant, process, and product.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATFORM (dark band) ============ -->
+<section class="sec dark" id="platform">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">The platform — one screen</p>
+      <h2>One screen the whole plant agrees on</h2>
+      <p class="sub">Efficiency, utilization, energy, downtime, and quality — updated live, with the reasoning attached to the number.</p>
+    </div>
+
+    <div class="kpi-row reveal">
+      <div class="kpi"><p class="num-label">Production efficiency</p><p class="kpi-num"><span class="count" data-val="84.2" data-dec="1">0</span><small>%</small></p><p class="kpi-d">▲ +1.8 pts this week</p></div>
+      <div class="kpi"><p class="num-label">Machine utilization</p><p class="kpi-num"><span class="count" data-val="76.9" data-dec="1">0</span><small>%</small></p><p class="kpi-d">▲ +3.4 pts this week</p></div>
+      <div class="kpi"><p class="num-label">Energy intensity</p><p class="kpi-num"><span class="count" data-val="412" data-dec="0">0</span><small> kWh/t</small></p><p class="kpi-d">▼ −6.2% this month</p></div>
+      <div class="kpi"><p class="num-label">Unplanned downtime</p><p class="kpi-num"><span class="count" data-val="3.4" data-dec="1">0</span><small> hrs/wk</small></p><p class="kpi-d">▼ −22% vs last month</p></div>
+      <div class="kpi"><p class="num-label">Quality rate</p><p class="kpi-num"><span class="count" data-val="98.6" data-dec="1">0</span><small>%</small></p><p class="kpi-d">▲ +0.4 pts this week</p></div>
+    </div>
+
+    <div class="plat-grid">
+      <div class="panel reveal">
+        <p class="num-label">Production output — units/day, last 30 days</p>
+        <svg viewBox="0 0 720 230" width="100%" aria-hidden="true" style="margin-top:14px">
+          <line x1="0" y1="55" x2="720" y2="55" stroke="#242424"/><line x1="0" y1="110" x2="720" y2="110" stroke="#242424"/><line x1="0" y1="165" x2="720" y2="165" stroke="#242424"/>
+          <line x1="0" y1="70" x2="720" y2="70" stroke="#6B4F3B" stroke-width="1.4" stroke-dasharray="6 7" opacity=".8"/>
+          <text x="712" y="62" text-anchor="end" font-family="Inter,sans-serif" font-size="10.5" fill="#A79B8D">TARGET</text>
+          <path d="M0,178 C60,170 90,156 150,158 C210,160 240,132 300,128 C360,124 390,142 450,120 C510,98 540,104 600,84 C650,68 690,62 720,56 L720,230 L0,230 Z" fill="rgba(217,119,6,.10)"/>
+          <path class="draw" pathLength="1" d="M0,178 C60,170 90,156 150,158 C210,160 240,132 300,128 C360,124 390,142 450,120 C510,98 540,104 600,84 C650,68 690,62 720,56" fill="none" stroke="#D97706" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="720" cy="56" r="4" fill="#D97706"/>
+        </svg>
+      </div>
+      <div class="panel recs reveal d1">
+        <p class="num-label" style="margin-bottom:6px">Today's whys — answered</p>
+        <div class="rec-item"><span class="prio hi">HIGH</span><span>Bearing temperature on <b>Winder 4</b> trending +8% — schedule inspection within 48 h.</span></div>
+        <div class="rec-item"><span class="prio md">MED</span><span>Shift B changeover on Line 2 runs 14 min above target — review the last three setups.</span></div>
+        <div class="rec-item"><span class="prio md">MED</span><span>Compressor idle load is 11% of night usage — stagger the morning start sequence.</span></div>
+      </div>
+    </div>
+
+    <div class="plat-bottom">
+      <div class="panel reveal">
+        <p class="num-label" style="margin-bottom:16px">Machine utilization — by line</p>
+        <div class="bar-line"><span>Line 1</span><div class="bar-track"><div class="bar-fill" data-w="92%"></div></div><span class="bar-val">92%</span></div>
+        <div class="bar-line"><span>Line 2</span><div class="bar-track"><div class="bar-fill" data-w="87%"></div></div><span class="bar-val">87%</span></div>
+        <div class="bar-line"><span>Winder 4</span><div class="bar-track"><div class="bar-fill low" data-w="64%"></div></div><span class="bar-val">64%</span></div>
+        <div class="bar-line"><span>Line 3</span><div class="bar-track"><div class="bar-fill" data-w="78%"></div></div><span class="bar-val">78%</span></div>
+        <div class="bar-line"><span>Packing</span><div class="bar-track"><div class="bar-fill" data-w="81%"></div></div><span class="bar-val">81%</span></div>
+      </div>
+      <div class="panel reveal d1">
+        <p class="num-label">Downtime heatmap — hour × day</p>
+        <div class="heat" id="heat" aria-hidden="true"></div>
+        <p class="legend">Low <i style="background:rgba(245,239,230,.07)"></i><i style="background:rgba(217,119,6,.25)"></i><i style="background:rgba(217,119,6,.55)"></i><i style="background:#D97706"></i> High</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="sec" id="industries">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Industries — where it runs</p>
+      <h2>Built where things get made</h2>
+      <p class="sub">The platform is one; the models are trained per vertical — because a spinning mill and a bottling line don't fail the same way.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind reveal">
+        <div class="iicon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V9l6 4V9l6 4V5l6-1v17"/><path d="M3 21h18"/><path d="M8 17h.01M13 17h.01M17 17h.01"/></svg></div>
+        <h3>General Manufacturing</h3>
+        <p>OEE, downtime, and quality tracking for discrete and batch production of any kind.</p>
+      </div>
+      <div class="ind reveal d1">
+        <div class="iicon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v3l-3.2 5A5.8 5.8 0 0012 21a5.8 5.8 0 005.2-10L14 6V3"/><path d="M8 15h8"/></svg></div>
+        <h3>FMCG Manufacturing</h3>
+        <p>Line-speed, giveaway, and changeover intelligence for high-volume packaged goods.</p>
+      </div>
+      <div class="ind reveal d2">
+        <div class="iicon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 5V3M12 21v-2M5 12H3M21 12h-2M6.6 6.6L5.2 5.2M18.8 18.8l-1.4-1.4M6.6 17.4l-1.4 1.4M18.8 5.2l-1.4 1.4"/></svg></div>
+        <h3>Automotive Components</h3>
+        <p>SPC, traceability, and predictive maintenance for machining and press shops.</p>
+      </div>
+      <div class="ind reveal">
+        <div class="iicon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9h16M8 5v14M16 5v14"/></svg></div>
+        <h3>Textile Mills</h3>
+        <p>Loom efficiency, stop analysis, and quality-grade prediction across the weaving shed.</p>
+      </div>
+      <div class="ind reveal d1">
+        <div class="iicon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 4v4.5M12 15.5V20M4 12h4.5M15.5 12H20"/></svg></div>
+        <h3>Yarn Manufacturing</h3>
+        <p>Spindle utilization, breakage patterns, and count-wise efficiency for spinning units.</p>
+      </div>
+      <div class="ind reveal d2">
+        <div class="iicon"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7c3-2 6-2 9 0s6 2 9 0M3 12c3-2 6-2 9 0s6 2 9 0M3 17c3-2 6-2 9 0s6 2 9 0"/></svg></div>
+        <h3>Fabric Processing</h3>
+        <p>Batch tracking, shade consistency, and utility optimization for dyeing and finishing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="sec sec-tight" id="features" style="background:linear-gradient(180deg,rgba(245,239,230,.4),rgba(245,239,230,0) 40%)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Inside the platform — four questions</p>
+      <h2>Four questions a report can't answer</h2>
+    </div>
+
+    <!-- Feature 1: Live Factory Visibility -->
+    <div class="feat">
+      <div class="fcopy reveal">
+        <p class="eyebrow">01 — Visibility</p>
+        <h3>What's running right now?</h3>
+        <p>Every machine, line, and shift on one live view. Know the state of the plant without walking it — from the office, or from a phone at 11 pm.</p>
+        <ul class="fchecks">
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Status, speed, and stops per machine in real time</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Shift and line comparisons without spreadsheets</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Works where the work is — phone, tablet, control room</li>
+        </ul>
+      </div>
+      <div class="fvis reveal d1">
+        <div class="floor">
+          <div class="floor-head"><span>Unit 2 · Ring Frames</span><span class="live">Live</span></div>
+          <div class="floor-grid">
+            <div class="machine">R-01<i></i></div>
+            <div class="machine">R-02<i></i></div>
+            <div class="machine">R-03<i></i></div>
+            <div class="machine">R-04<i></i></div>
+            <div class="machine">R-05<i></i></div>
+            <div class="machine warn">R-06<i></i></div>
+            <div class="machine">R-07<i></i></div>
+            <div class="machine">R-08<i></i></div>
+            <div class="machine">R-09<i></i></div>
+            <div class="machine">R-10<i></i></div>
+            <div class="machine idle">R-11<i></i></div>
+            <div class="machine">R-12<i></i></div>
+          </div>
+          <div class="floor-legend">
+            <span><i class="lg-ok"></i>Running · 10</span>
+            <span><i class="lg-warn"></i>Attention · 1</span>
+            <span><i class="lg-idle"></i>Idle · 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: Predictive Maintenance -->
+    <div class="feat rev">
+      <div class="fvis reveal d1">
+        <div class="health">
+          <div class="health-head">
+            <h4>Ring Frame R-12</h4>
+            <span class="health-badge">Attention</span>
+          </div>
+          <svg class="spark" viewBox="0 0 300 70" fill="none" aria-hidden="true" preserveAspectRatio="none">
+            <path d="M0 52 30 50 60 53 90 46 120 48 150 40 180 42 210 32 240 34 270 22 300 18" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="300" cy="18" r="3.5" fill="#fff" stroke="#D97706" stroke-width="2"/>
+          </svg>
+          <div class="health-row">Vibration <b>+14%</b> over 6-hour baseline</div>
+          <div class="health-row">Bearing wear probability <b>78%</b> · window <b>5–7 days</b></div>
+          <div class="health-divider"></div>
+          <a class="health-cta" href="#demo">Create work order →</a>
+        </div>
+      </div>
+      <div class="fcopy reveal">
+        <p class="eyebrow">02 — Maintenance</p>
+        <h3>What fails next week?</h3>
+        <p>Agents watch vibration, temperature, and load patterns across every asset, flagging wear days before it becomes downtime — with the reasoning shown, not hidden.</p>
+        <ul class="fchecks">
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Failure probability with a time window, not a guess</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Work orders drafted automatically for review</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Every alert explains the signal behind it</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Feature 3: AI Insights -->
+    <div class="feat">
+      <div class="fcopy reveal">
+        <p class="eyebrow">03 — Insight</p>
+        <h3>Why did quality dip on Tuesday?</h3>
+        <p>Ask the plant a question in plain language and get an answer with the data behind it — not a dashboard scavenger hunt.</p>
+      </div>
+      <div class="fvis reveal d1">
+        <div class="fcard qa">
+          <div class="bub">Why did Line 2 quality dip on Tuesday?</div>
+          <div class="bub ai"><b>Humidity spiked between 11:40–13:10.</b> Tension on frames 3–4 drifted out of band during that window — recalibration recommended before Shift A.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 4: Energy Optimization -->
+    <div class="feat rev">
+      <div class="fvis reveal d1">
+        <div class="fcard">
+          <p class="num-label" style="margin-bottom:12px">Energy — weekly consumption</p>
+          <div class="ebars">
+            <span style="height:88%"></span><span style="height:95%"></span><span style="height:82%"></span><span style="height:90%"></span><span style="height:74%"></span><span class="on" style="height:63%"></span><span class="on" style="height:57%"></span>
+          </div>
+          <span class="badge">−6.4%<small>this month, same output</small></span>
+        </div>
+      </div>
+      <div class="fcopy reveal">
+        <p class="eyebrow">04 — Energy</p>
+        <h3>Where does the energy go at night?</h3>
+        <p>Find idle-load waste, off-peak opportunities, and the machines quietly burning margin — without commissioning a separate energy audit.</p>
+      </div>
+    </div>
+
+    <!-- Capabilities sub-grid -->
+    <div class="caps reveal">
+      <div class="cap">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg>
+        <div><h4>AI-powered Insights</h4><p>Anomalies, causes, and next steps — surfaced, not searched for.</p></div>
+      </div>
+      <div class="cap">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13.5h6L11 22l8-11.5h-6z"/></svg>
+        <div><h4>Energy Optimization</h4><p>Per-unit energy tracked and trimmed across shifts and machines.</p></div>
+      </div>
+      <div class="cap">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="12.5" width="7.5" height="7.5" rx="2"/><path d="M10.5 7.75h4.5v4.75"/><path d="M13.5 16.25H9v-4.75"/></svg>
+        <div><h4>ERP Integration</h4><p>Two-way sync with the ERP and MES you already run.</p></div>
+      </div>
+      <div class="cap">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4"/><path d="M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg>
+        <div><h4>Sensor Integration</h4><p>PLCs, IoT gateways, and retrofit sensors — old machines included.</p></div>
+      </div>
+      <div class="cap">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 8.5 4 4 0 0 1 17.5 18z"/></svg>
+        <div><h4>Cloud Platform</h4><p>Secure, scalable, and current — no servers to babysit.</p></div>
+      </div>
+      <div class="cap">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+        <div><h4>Mobile Ready</h4><p>The plant in your pocket — alerts and approvals on the move.</p></div>
+      </div>
+    </div>
+
+    <!-- Integrations bar -->
+    <div class="intg reveal">
+      <div>
+        <p class="num-label">Integrations</p>
+        <h3>Plugs into what you already run</h3>
+      </div>
+      <div class="chips">
+        <span>ERP &amp; accounting</span><span>PLCs &amp; sensors — OPC-UA, Modbus</span><span>SCADA &amp; historians</span><span>Cloud or on-prem</span><span>iOS &amp; Android</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOW (how it works) ============ -->
+<section class="sec" id="flow">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How it works — signal to decision</p>
+      <h2>From signal to decision, one path</h2>
+      <p class="sub">No exports. No end-of-month spreadsheet. The same pipe carries the data from the machine to the person who acts on it.</p>
+    </div>
+    <div class="flow-section">
+      <div class="node reveal"><span class="ncirc">01</span><span class="nlabel">Machines<small>on your floor today</small></span></div>
+      <div class="node reveal d1"><span class="ncirc">02</span><span class="nlabel">Sensors<small>existing or retrofit</small></span></div>
+      <div class="node reveal d2"><span class="ncirc">03</span><span class="nlabel">Data platform<small>cleaned &amp; contextual</small></span></div>
+      <div class="node reveal d3"><span class="ncirc">04</span><span class="nlabel">Agents ask why<small>trained per vertical</small></span></div>
+      <div class="node reveal d3"><span class="ncirc">05</span><span class="nlabel">Recommendation<small>with the evidence</small></span></div>
+      <div class="node reveal d4"><span class="ncirc">06</span><span class="nlabel">Operator decision<small>human in the loop</small></span></div>
+      <div class="node reveal d4"><span class="ncirc">07</span><span class="nlabel">Improved output<small>measured, not claimed</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-band sec" id="demo">
+  <div class="container cta-inner">
+    <p class="eyebrow reveal" style="justify-content:center">Get started</p>
+    <h2 class="reveal d1">What would you ask your plant first?</h2>
+    <p class="sub reveal d2">A 30-minute walkthrough on your own use case — your lines, your data, your numbers. No slideware.</p>
+    <div class="form-card reveal d3" id="demoForm">
+      <div class="inp"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Your name" autocomplete="name"></div>
+      <div class="inp"><label for="f-co">Company</label><input id="f-co" type="text" placeholder="Plant or company name" autocomplete="organization"></div>
+      <div class="inp full"><label for="f-contact">Work email or phone</label><input id="f-contact" type="text" placeholder="you@company.com or +91…" autocomplete="email"></div>
+      <button class="btn btn-primary" id="f-send" type="button">Book a demo</button>
+      <p class="ok-msg" id="okMsg" role="status" aria-live="polite">Request received. We'll reach out within one business day.</p>
+    </div>
+    <p class="alt-cta reveal d4">Prefer to talk first? <a href="#demo">Message us on WhatsApp →</a></p>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">
+          <svg width="24" height="28" viewBox="0 0 26 30" fill="none" aria-hidden="true">
+            <path d="M6 4 L13 12.5 L20 4" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M13 12.5 V19.5" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="13" cy="26" r="2.6" fill="#D97706"/>
+          </svg>
+          Y Factor
+        </p>
+        <p class="foot-tag">Ask Y first.</p>
+        <p class="foot-boiler">Y Factor is agentic AI for business data comprehension — agents that ask why first, trace answers through your data, and turn them into decisions.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com" aria-label="Y Factor on LinkedIn">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V17"/><circle cx="8" cy="7.4" r="0.5" fill="currentColor"/><path d="M12 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/><path d="M12 10.5V17"/></svg>
+          </a>
+          <a href="mailto:hello@yfactor.ai" aria-label="Email Y Factor">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4.5 7.5 12 13l7.5-5.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Product</h4>
+        <a href="#platform">Platform</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <a href="#why">Why Y Factor</a>
+        <a href="#demo">Contact</a>
+        <a href="#top">About</a>
+      </div>
+      <div class="fcol">
+        <h4>Connect</h4>
+        <a href="https://www.linkedin.com" aria-label="Y Factor on LinkedIn">LinkedIn</a>
+        <a href="mailto:hello@yfactor.ai">hello@yfactor.ai</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr">2026</span> Y Factor. All rights reserved.</span>
+      <span>Made for the factory floor.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
