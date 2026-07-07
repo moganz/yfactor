@@ -4,13 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Y Factor — Ask Y first.</title>
-<meta name="description" content="Y Factor is agentic AI for manufacturing data comprehension — agents that ask why first, trace answers through machine and production data, and turn them into decisions.">
-<meta name="theme-color" content="#F5EFE6">
+<meta name="description" content="Y Factor is agentic AI for manufacturing data. Its agents ask why first, trace answers through machine and production data, and turn them into decisions your team can act on.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://moganz.github.io/yfactor/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Y Factor">
+<meta property="og:title" content="Y Factor — Ask Y first.">
+<meta property="og:description" content="Agentic AI for manufacturing data. Agents that ask why first, trace answers through machine and production data, and turn them into decisions.">
+<meta property="og:url" content="https://moganz.github.io/yfactor/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Y Factor — Ask Y first.">
+<meta name="twitter:description" content="Agentic AI for manufacturing data. Agents that ask why first, trace answers through machine and production data, and turn them into decisions.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111111'/%3E%3Cpath d='M10 7l6 7 6-7' stroke='%23F5EFE6' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 14v6' stroke='%23F5EFE6' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='25.5' r='2.6' fill='%23D97706'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Y Factor",
+  "url": "https://moganz.github.io/yfactor/",
+  "email": "hello@yfactor.ai",
+  "slogan": "Ask Y first.",
+  "description": "Agentic AI for manufacturing data comprehension. Agents that ask why first, trace answers through machine and production data, and turn them into decisions."
+}
+</script>
 <noscript>
 <style>
   [data-kinetic] .k-l{opacity:1;transform:none}
@@ -18,10 +38,13 @@
   .hr{opacity:1;transform:none;animation:none}
   .reveal{opacity:1;transform:none}
   svg .draw{stroke-dasharray:none;stroke-dashoffset:0}
+  .heat,.legend{display:none}
 </style>
 </noscript>
 </head>
 <body id="top">
+
+<a class="skip" href="#main">Skip to content</a>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
@@ -33,7 +56,7 @@
         <path d="M13 12.5 V19.5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
         <circle cx="13" cy="26" r="2.6" fill="#D97706"/>
       </svg>
-      Y Factor
+      <span class="brand-name">Factor</span>
     </a>
     <nav aria-label="Primary">
       <ul class="nav-links">
@@ -59,9 +82,9 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <!-- ============ HERO ============ -->
-<header class="hero">
+<section class="hero">
   <!-- Signature geometry: two production streams converge at a junction into one output line — a Y drawn as factory flow -->
   <svg class="hero-art" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <defs>
@@ -139,24 +162,24 @@
       </div>
 
       <h1 class="hr hr-2">Ask Y first.</h1>
-      <p class="lede hr hr-3">Y Factor builds agents that make production data effortless to understand — they ask why first, trace the answer through your machines and shifts, and turn it into a decision your team can act on before the shift ends.</p>
+      <p class="lede hr hr-3">Y Factor builds agents that make production data effortless to understand. They ask why first, trace the answer through your machines and shifts, and hand your team a decision in time to act before the shift ends.</p>
       <div class="btn-row hr hr-4">
         <a class="btn btn-primary" href="#demo">Book a demo</a>
         <a class="btn btn-ghost" href="#platform">See the platform</a>
       </div>
-      <p class="micro hr hr-4"><b>Works with the machines and ERP you already run.</b> No rip-and-replace, no new hardware to start.</p>
+      <p class="micro hr hr-4"><b>Works with the machines and ERP you already run.</b> Start on existing sensors; retrofit only where coverage is thin.</p>
     </div>
 
     <!-- Hero Dashboard Widget -->
     <div class="dash-wrap hr hr-5">
-      <div class="dash" role="img" aria-label="Y Factor plant overview dashboard showing OEE, production trend, an AI recommendation and machine status">
+      <div class="dash">
         <div class="dash-head">
           <span class="dash-title"><span class="live-dot" aria-hidden="true"></span>Plant overview — live</span>
           <span class="shift-chip">Shift B · 14:20</span>
         </div>
         <div class="dash-body">
           <p class="num-label">OEE — Overall equipment effectiveness</p>
-          <p class="kbig"><span class="count" data-val="78.4" data-dec="1">0</span><small>%</small></p>
+          <p class="kbig"><span class="count" data-val="78.4" data-dec="1">78.4</span><small>%</small></p>
           <p class="kdelta"><b>▲ +2.1 pts</b> vs last week · availability 91.2 · performance 88.7 · quality 96.9</p>
 
           <div class="chart-wrap">
@@ -177,7 +200,7 @@
             <a href="#demo">Create work order →</a>
           </div>
 
-          <div class="status-row" aria-label="Machine status">
+          <div class="status-row" role="group" aria-label="Machine status">
             <span class="schip"><i></i>Line 1 · Running</span>
             <span class="schip"><i></i>Line 2 · Running</span>
             <span class="schip warn"><i></i>Winder 4 · Attention</span>
@@ -188,37 +211,29 @@
       </div>
     </div>
   </div>
-</header>
-
-<!-- ============ COVERAGE STRIP ============ -->
-<section class="strip" aria-label="Industry coverage">
-  <div class="container">
-    <p class="strip-label">Built for the plants that make everything else</p>
-    <p class="strip-items"><span>General manufacturing</span><i>·</i><span>FMCG</span><i>·</i><span>Automotive components</span><i>·</i><span>Textile mills</span><i>·</i><span>Yarn</span><i>·</i><span>Fabric processing</span></p>
-  </div>
 </section>
 
-<!-- ============ STATS ============ -->
+<!-- ============ STATS (pilot targets) ============ -->
 <div class="stats">
-  <div class="stats-grid reveal" id="statsGrid">
+  <p class="stats-kicker">Pilot targets · the numbers we scope a first deployment around</p>
+  <div class="stats-grid reveal">
     <div class="stat">
-      <div class="stat-num"><span class="count" data-val="17" data-dec="0">0</span><span class="unit">%</span></div>
-      <div class="stat-label">Average downtime reduction</div>
+      <div class="stat-num">15–20<span class="unit">%</span></div>
+      <div class="stat-label">Downtime reduction we target on a first line</div>
     </div>
     <div class="stat">
-      <div class="stat-num"><span class="count" data-val="9.4" data-dec="1">0</span><span class="unit">%</span></div>
-      <div class="stat-label">OEE uplift in first quarter</div>
+      <div class="stat-num">5–10<span class="unit">%</span></div>
+      <div class="stat-label">OEE uplift we aim for in the first quarter</div>
     </div>
     <div class="stat">
       <div class="stat-num">&lt;90 <span class="unit">days</span></div>
-      <div class="stat-label">To first measurable ROI</div>
+      <div class="stat-label">Target to first measurable ROI</div>
     </div>
     <div class="stat">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">Agents watching every line</div>
+      <div class="stat-num">1 <span class="unit">line</span></div>
+      <div class="stat-label">Is enough to start</div>
     </div>
   </div>
-  <div class="stats-note">Illustrative of targeted deployment outcomes.</div>
 </div>
 
 <!-- ============ WHY Y FACTOR ============ -->
@@ -251,8 +266,8 @@
       <div class="why-copy reveal">
         <p class="eyebrow">Why Y Factor — the name is the method</p>
         <h2>Why is the Y first?</h2>
-        <p>Every factory runs on factors — men, machines, materials, methods. Most plants still run without the fifth one: the question <b>why</b>.</p>
-        <p>The name says how we work. Take <b>factory</b> apart and pull the <b>Y</b> to the front — what remains is <b>factor</b>. Y Factor puts the question before the plant: why did the line slow, why did quality drift, why does Shift B run different. Then it answers, with the data attached.</p>
+        <p>Every factory runs on four factors: men, machines, materials, methods. Most plants still run without the fifth — the question <b>why</b>.</p>
+        <p>The name says how we work. Take <b>factory</b> apart and pull the <b>Y</b> to the front; what remains is <b>factor</b>. Y Factor puts the question before the plant: why did the line slow, why did quality drift, why does Shift B run different. Then it answers, with the data attached.</p>
       </div>
       <div class="reveal d2">
         <svg viewBox="0 0 480 420" width="100%" role="img" aria-label="Two data streams — machine data and operations data — converge into a single decision path feeding the factory floor">
@@ -296,14 +311,14 @@
             <rect x="298" y="378" width="30" height="20" rx="5" fill="#fff" stroke="#E7DECF"/>
           </g>
         </svg>
-        <p class="ycap">Two streams — machine data and operations data — one decision path to the floor.</p>
+        <p class="ycap">Machine data and operations data: one decision path to the floor.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section class="sec sec-tight" id="services" style="background:linear-gradient(180deg,rgba(245,239,230,.35),rgba(245,239,230,0) 30%)">
+<section class="sec sec-tight tint-a" id="services">
   <div class="container">
     <div class="sec-head reveal">
       <p class="eyebrow">Services — what we build</p>
@@ -314,7 +329,7 @@
       <div class="card reveal">
         <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="8" height="10" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="15" width="8" height="6" rx="2"/></svg></div>
         <h3>AI Dashboards</h3>
-        <p>Live visibility across lines, shifts, and machines — on one screen supervisors actually check.</p>
+        <p>Live visibility across lines, shifts, and machines, on one screen supervisors keep open all day.</p>
       </div>
       <div class="card reveal d1">
         <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 17l5-6 4 3 6-8"/><path d="M15 6h3v3"/><path d="M3 21h18"/></svg></div>
@@ -329,12 +344,12 @@
       <div class="card reveal">
         <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M6.5 7.5L10.5 16M17.5 7.5L13.5 16M7 6h10"/></svg></div>
         <h3>Process Intelligence</h3>
-        <p>Find the bottleneck, the slow changeover, the shift that runs different — with evidence.</p>
+        <p>Find the bottleneck, the slow changeover, and the shift that runs different, with evidence for each.</p>
       </div>
       <div class="card reveal d1">
         <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 13l3.5-3.5"/><path d="M12 5V3M9 3h6"/></svg></div>
         <h3>Production Insights</h3>
-        <p>KPIs with a recommended action attached — not just a number that turned red.</p>
+        <p>Every KPI arrives with a recommended action, so a red number also tells you what to do next.</p>
       </div>
       <div class="card reveal d2">
         <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></div>
@@ -351,15 +366,15 @@
     <div class="sec-head reveal">
       <p class="eyebrow">The platform — one screen</p>
       <h2>One screen the whole plant agrees on</h2>
-      <p class="sub">Efficiency, utilization, energy, downtime, and quality — updated live, with the reasoning attached to the number.</p>
+      <p class="sub">Efficiency, utilization, energy, downtime, and quality, updated live with the reasoning attached to each number.</p>
     </div>
 
     <div class="kpi-row reveal">
-      <div class="kpi"><p class="num-label">Production efficiency</p><p class="kpi-num"><span class="count" data-val="84.2" data-dec="1">0</span><small>%</small></p><p class="kpi-d">▲ +1.8 pts this week</p></div>
-      <div class="kpi"><p class="num-label">Machine utilization</p><p class="kpi-num"><span class="count" data-val="76.9" data-dec="1">0</span><small>%</small></p><p class="kpi-d">▲ +3.4 pts this week</p></div>
-      <div class="kpi"><p class="num-label">Energy intensity</p><p class="kpi-num"><span class="count" data-val="412" data-dec="0">0</span><small> kWh/t</small></p><p class="kpi-d">▼ −6.2% this month</p></div>
-      <div class="kpi"><p class="num-label">Unplanned downtime</p><p class="kpi-num"><span class="count" data-val="3.4" data-dec="1">0</span><small> hrs/wk</small></p><p class="kpi-d">▼ −22% vs last month</p></div>
-      <div class="kpi"><p class="num-label">Quality rate</p><p class="kpi-num"><span class="count" data-val="98.6" data-dec="1">0</span><small>%</small></p><p class="kpi-d">▲ +0.4 pts this week</p></div>
+      <div class="kpi"><p class="num-label">Production efficiency</p><p class="kpi-num"><span class="count" data-val="84.2" data-dec="1">84.2</span><small>%</small></p><p class="kpi-d">▲ +1.8 pts this week</p></div>
+      <div class="kpi"><p class="num-label">Machine utilization</p><p class="kpi-num"><span class="count" data-val="76.9" data-dec="1">76.9</span><small>%</small></p><p class="kpi-d">▲ +3.4 pts this week</p></div>
+      <div class="kpi"><p class="num-label">Energy intensity</p><p class="kpi-num"><span class="count" data-val="412" data-dec="0">412</span><small> kWh/t</small></p><p class="kpi-d">▼ −6.2% this month</p></div>
+      <div class="kpi"><p class="num-label">Unplanned downtime</p><p class="kpi-num"><span class="count" data-val="3.4" data-dec="1">3.4</span><small> hrs/wk</small></p><p class="kpi-d">▼ −22% vs last month</p></div>
+      <div class="kpi"><p class="num-label">Quality rate</p><p class="kpi-num"><span class="count" data-val="98.6" data-dec="1">98.6</span><small>%</small></p><p class="kpi-d">▲ +0.4 pts this week</p></div>
     </div>
 
     <div class="plat-grid">
@@ -375,24 +390,24 @@
         </svg>
       </div>
       <div class="panel recs reveal d1">
-        <p class="num-label" style="margin-bottom:6px">Today's whys — answered</p>
-        <div class="rec-item"><span class="prio hi">HIGH</span><span>Bearing temperature on <b>Winder 4</b> trending +8% — schedule inspection within 48 h.</span></div>
-        <div class="rec-item"><span class="prio md">MED</span><span>Shift B changeover on Line 2 runs 14 min above target — review the last three setups.</span></div>
-        <div class="rec-item"><span class="prio md">MED</span><span>Compressor idle load is 11% of night usage — stagger the morning start sequence.</span></div>
+        <p class="num-label" style="margin-bottom:6px">Today's whys, answered</p>
+        <div class="rec-item"><span class="prio hi">HIGH</span><span>Vibration on <b>Winder 4</b> is trending +8% over 6 hours. Schedule a bearing inspection within 48 h.</span></div>
+        <div class="rec-item"><span class="prio md">MED</span><span>Shift B changeover on Line 2 runs 14 min above target. Review the last three setups.</span></div>
+        <div class="rec-item"><span class="prio md">MED</span><span>Compressor idle load is 11% of night usage. Stagger the morning start sequence.</span></div>
       </div>
     </div>
 
     <div class="plat-bottom">
       <div class="panel reveal">
         <p class="num-label" style="margin-bottom:16px">Machine utilization — by line</p>
-        <div class="bar-line"><span>Line 1</span><div class="bar-track"><div class="bar-fill" data-w="92%"></div></div><span class="bar-val">92%</span></div>
-        <div class="bar-line"><span>Line 2</span><div class="bar-track"><div class="bar-fill" data-w="87%"></div></div><span class="bar-val">87%</span></div>
-        <div class="bar-line"><span>Winder 4</span><div class="bar-track"><div class="bar-fill low" data-w="64%"></div></div><span class="bar-val">64%</span></div>
-        <div class="bar-line"><span>Line 3</span><div class="bar-track"><div class="bar-fill" data-w="78%"></div></div><span class="bar-val">78%</span></div>
-        <div class="bar-line"><span>Packing</span><div class="bar-track"><div class="bar-fill" data-w="81%"></div></div><span class="bar-val">81%</span></div>
+        <div class="bar-line"><span>Line 1</span><div class="bar-track"><div class="bar-fill" data-w="92%" style="width:92%"></div></div><span class="bar-val">92%</span></div>
+        <div class="bar-line"><span>Line 2</span><div class="bar-track"><div class="bar-fill" data-w="87%" style="width:87%"></div></div><span class="bar-val">87%</span></div>
+        <div class="bar-line"><span>Winder 4</span><div class="bar-track"><div class="bar-fill low" data-w="64%" style="width:64%"></div></div><span class="bar-val">64%</span></div>
+        <div class="bar-line"><span>Line 3</span><div class="bar-track"><div class="bar-fill" data-w="78%" style="width:78%"></div></div><span class="bar-val">78%</span></div>
+        <div class="bar-line"><span>Packing</span><div class="bar-track"><div class="bar-fill" data-w="81%" style="width:81%"></div></div><span class="bar-val">81%</span></div>
       </div>
       <div class="panel reveal d1">
-        <p class="num-label">Downtime heatmap — hour × day</p>
+        <p class="num-label">Downtime heatmap — hour × day, last 7 days</p>
         <div class="heat" id="heat" aria-hidden="true"></div>
         <p class="legend">Low <i style="background:rgba(245,239,230,.07)"></i><i style="background:rgba(217,119,6,.25)"></i><i style="background:rgba(217,119,6,.55)"></i><i style="background:#D97706"></i> High</p>
       </div>
@@ -406,7 +421,7 @@
     <div class="sec-head reveal">
       <p class="eyebrow">Industries — where it runs</p>
       <h2>Built where things get made</h2>
-      <p class="sub">The platform is one; the models are trained per vertical — because a spinning mill and a bottling line don't fail the same way.</p>
+      <p class="sub">One platform, models trained per vertical. A spinning mill and a bottling line don't fail the same way.</p>
     </div>
     <div class="ind-grid">
       <div class="ind reveal">
@@ -444,7 +459,7 @@
 </section>
 
 <!-- ============ FEATURES ============ -->
-<section class="sec sec-tight" id="features" style="background:linear-gradient(180deg,rgba(245,239,230,.4),rgba(245,239,230,0) 40%)">
+<section class="sec sec-tight tint-b" id="features">
   <div class="container">
     <div class="sec-head reveal">
       <p class="eyebrow">Inside the platform — four questions</p>
@@ -454,13 +469,13 @@
     <!-- Feature 1: Live Factory Visibility -->
     <div class="feat">
       <div class="fcopy reveal">
-        <p class="eyebrow">01 — Visibility</p>
+        <p class="eyebrow">Visibility</p>
         <h3>What's running right now?</h3>
-        <p>Every machine, line, and shift on one live view. Know the state of the plant without walking it — from the office, or from a phone at 11 pm.</p>
+        <p>Every machine, line, and shift on one live view. Know the state of the plant without walking it, from the office or from a phone at 11 pm.</p>
         <ul class="fchecks">
           <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Status, speed, and stops per machine in real time</li>
           <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Shift and line comparisons without spreadsheets</li>
-          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Works where the work is — phone, tablet, control room</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Works where the work is: phone, tablet, control room</li>
         </ul>
       </div>
       <div class="fvis reveal d1">
@@ -472,12 +487,12 @@
             <div class="machine">R-03<i></i></div>
             <div class="machine">R-04<i></i></div>
             <div class="machine">R-05<i></i></div>
-            <div class="machine warn">R-06<i></i></div>
+            <div class="machine warn">R-06<span class="sr-only"> — attention</span><i></i></div>
             <div class="machine">R-07<i></i></div>
             <div class="machine">R-08<i></i></div>
             <div class="machine">R-09<i></i></div>
             <div class="machine">R-10<i></i></div>
-            <div class="machine idle">R-11<i></i></div>
+            <div class="machine idle">R-11<span class="sr-only"> — idle</span><i></i></div>
             <div class="machine">R-12<i></i></div>
           </div>
           <div class="floor-legend">
@@ -494,25 +509,25 @@
       <div class="fvis reveal d1">
         <div class="health">
           <div class="health-head">
-            <h4>Ring Frame R-12</h4>
+            <h4>Ring Frame R-06</h4>
             <span class="health-badge">Attention</span>
           </div>
           <svg class="spark" viewBox="0 0 300 70" fill="none" aria-hidden="true" preserveAspectRatio="none">
             <path d="M0 52 30 50 60 53 90 46 120 48 150 40 180 42 210 32 240 34 270 22 300 18" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="300" cy="18" r="3.5" fill="#fff" stroke="#D97706" stroke-width="2"/>
           </svg>
-          <div class="health-row">Vibration <b>+14%</b> over 6-hour baseline</div>
-          <div class="health-row">Bearing wear probability <b>78%</b> · window <b>5–7 days</b></div>
+          <div class="health-row">Drive motor running <b>9°C</b> above the fleet average</div>
+          <div class="health-row">Belt wear probability <b>72%</b> · window <b>5–7 days</b></div>
           <div class="health-divider"></div>
           <a class="health-cta" href="#demo">Create work order →</a>
         </div>
       </div>
       <div class="fcopy reveal">
-        <p class="eyebrow">02 — Maintenance</p>
+        <p class="eyebrow">Maintenance</p>
         <h3>What fails next week?</h3>
-        <p>Agents watch vibration, temperature, and load patterns across every asset, flagging wear days before it becomes downtime — with the reasoning shown, not hidden.</p>
+        <p>Agents watch vibration, temperature, and load patterns across every asset, and flag wear days before it becomes downtime.</p>
         <ul class="fchecks">
-          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Failure probability with a time window, not a guess</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Failure probability with a date window you can plan around</li>
           <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Work orders drafted automatically for review</li>
           <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l4.5 4.5L20 6"/></svg>Every alert explains the signal behind it</li>
         </ul>
@@ -522,14 +537,14 @@
     <!-- Feature 3: AI Insights -->
     <div class="feat">
       <div class="fcopy reveal">
-        <p class="eyebrow">03 — Insight</p>
+        <p class="eyebrow">Insight</p>
         <h3>Why did quality dip on Tuesday?</h3>
-        <p>Ask the plant a question in plain language and get an answer with the data behind it — not a dashboard scavenger hunt.</p>
+        <p>Ask the plant a question in plain language. The answer comes back with the data behind it.</p>
       </div>
       <div class="fvis reveal d1">
         <div class="fcard qa">
           <div class="bub">Why did Line 2 quality dip on Tuesday?</div>
-          <div class="bub ai"><b>Humidity spiked between 11:40–13:10.</b> Tension on frames 3–4 drifted out of band during that window — recalibration recommended before Shift A.</div>
+          <div class="bub ai"><b>Humidity spiked between 11:40 and 13:10.</b> Tension on frames 3–4 drifted out of band during that window; recalibrate before Shift A.</div>
         </div>
       </div>
     </div>
@@ -542,13 +557,13 @@
           <div class="ebars">
             <span style="height:88%"></span><span style="height:95%"></span><span style="height:82%"></span><span style="height:90%"></span><span style="height:74%"></span><span class="on" style="height:63%"></span><span class="on" style="height:57%"></span>
           </div>
-          <span class="badge">−6.4%<small>this month, same output</small></span>
+          <span class="badge">−6.2%<small>this month, same output</small></span>
         </div>
       </div>
       <div class="fcopy reveal">
-        <p class="eyebrow">04 — Energy</p>
+        <p class="eyebrow">Energy</p>
         <h3>Where does the energy go at night?</h3>
-        <p>Find idle-load waste, off-peak opportunities, and the machines quietly burning margin — without commissioning a separate energy audit.</p>
+        <p>Find idle-load waste, off-peak opportunities, and the machines quietly burning margin, without commissioning a separate energy audit.</p>
       </div>
     </div>
 
@@ -556,7 +571,7 @@
     <div class="caps reveal">
       <div class="cap">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg>
-        <div><h4>AI-powered Insights</h4><p>Anomalies, causes, and next steps — surfaced, not searched for.</p></div>
+        <div><h4>AI-powered Insights</h4><p>Surfaces anomalies, causes, and next steps before anyone goes looking.</p></div>
       </div>
       <div class="cap">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 5 13.5h6L11 22l8-11.5h-6z"/></svg>
@@ -568,15 +583,15 @@
       </div>
       <div class="cap">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4"/><path d="M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></svg>
-        <div><h4>Sensor Integration</h4><p>PLCs, IoT gateways, and retrofit sensors — old machines included.</p></div>
+        <div><h4>Sensor Integration</h4><p>PLCs, IoT gateways, and retrofit sensors, old machines included.</p></div>
       </div>
       <div class="cap">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.6-8.96A6 6 0 0 1 18 8.5 4 4 0 0 1 17.5 18z"/></svg>
-        <div><h4>Cloud Platform</h4><p>Secure, scalable, and current — no servers to babysit.</p></div>
+        <div><h4>Cloud Platform</h4><p>Secure and scalable, with no servers for your team to maintain.</p></div>
       </div>
       <div class="cap">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
-        <div><h4>Mobile Ready</h4><p>The plant in your pocket — alerts and approvals on the move.</p></div>
+        <div><h4>Mobile Ready</h4><p>Alerts and approvals from your phone, on the floor or away from it.</p></div>
       </div>
     </div>
 
@@ -599,7 +614,7 @@
     <div class="sec-head reveal">
       <p class="eyebrow">How it works — signal to decision</p>
       <h2>From signal to decision, one path</h2>
-      <p class="sub">No exports. No end-of-month spreadsheet. The same pipe carries the data from the machine to the person who acts on it.</p>
+      <p class="sub">One pipe carries the data from the machine to the person who acts on it, with nothing exported to a spreadsheet along the way.</p>
     </div>
     <div class="flow-section">
       <div class="node reveal"><span class="ncirc">01</span><span class="nlabel">Machines<small>on your floor today</small></span></div>
@@ -618,15 +633,28 @@
   <div class="container cta-inner">
     <p class="eyebrow reveal" style="justify-content:center">Get started</p>
     <h2 class="reveal d1">What would you ask your plant first?</h2>
-    <p class="sub reveal d2">A 30-minute walkthrough on your own use case — your lines, your data, your numbers. No slideware.</p>
-    <div class="form-card reveal d3" id="demoForm">
-      <div class="inp"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Your name" autocomplete="name"></div>
-      <div class="inp"><label for="f-co">Company</label><input id="f-co" type="text" placeholder="Plant or company name" autocomplete="organization"></div>
-      <div class="inp full"><label for="f-contact">Work email or phone</label><input id="f-contact" type="text" placeholder="you@company.com or +91…" autocomplete="email"></div>
-      <button class="btn btn-primary" id="f-send" type="button">Book a demo</button>
-      <p class="ok-msg" id="okMsg" role="status" aria-live="polite">Request received. We'll reach out within one business day.</p>
-    </div>
-    <p class="alt-cta reveal d4">Prefer to talk first? <a href="#demo">Message us on WhatsApp →</a></p>
+    <p class="sub reveal d2">A 30-minute walkthrough built on your own lines and your own data.</p>
+    <form class="form-card reveal d3" id="demoForm" action="https://formsubmit.co/hello@yfactor.ai" method="POST" novalidate>
+      <div class="inp">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+        <p class="err-msg" id="f-name-err" hidden>Enter your name.</p>
+      </div>
+      <div class="inp">
+        <label for="f-co">Company</label>
+        <input id="f-co" name="company" type="text" placeholder="Plant or company name" autocomplete="organization" required>
+        <p class="err-msg" id="f-co-err" hidden>Enter your company or plant name.</p>
+      </div>
+      <div class="inp full">
+        <label for="f-contact">Work email or phone</label>
+        <input id="f-contact" name="contact" type="text" placeholder="you@company.com or +91…" autocomplete="email" required>
+        <p class="err-msg" id="f-contact-err" hidden>Enter an email address or phone number.</p>
+      </div>
+      <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true">
+      <button class="btn btn-primary" id="f-send" type="submit">Book a demo</button>
+      <p class="form-status" id="okMsg" role="status" aria-live="polite"></p>
+    </form>
+    <p class="alt-cta reveal d4">Prefer email? Write to <a href="mailto:hello@yfactor.ai">hello@yfactor.ai</a></p>
   </div>
 </section>
 </main>
@@ -642,34 +670,29 @@
             <path d="M13 12.5 V19.5" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
             <circle cx="13" cy="26" r="2.6" fill="#D97706"/>
           </svg>
-          Y Factor
+          <span aria-hidden="true">Factor</span><span class="sr-only">Y Factor</span>
         </p>
         <p class="foot-tag">Ask Y first.</p>
-        <p class="foot-boiler">Y Factor is agentic AI for business data comprehension — agents that ask why first, trace answers through your data, and turn them into decisions.</p>
+        <p class="foot-boiler">Y Factor is agentic AI for manufacturing data. Its agents ask why first, trace answers through machine and production data, and turn them into decisions.</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com" aria-label="Y Factor on LinkedIn">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10.5V17"/><circle cx="8" cy="7.4" r="0.5" fill="currentColor"/><path d="M12 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/><path d="M12 10.5V17"/></svg>
-          </a>
           <a href="mailto:hello@yfactor.ai" aria-label="Email Y Factor">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4.5 7.5 12 13l7.5-5.5"/></svg>
           </a>
         </div>
       </div>
       <div class="fcol">
-        <h4>Product</h4>
+        <h3>Product</h3>
         <a href="#platform">Platform</a>
         <a href="#services">Services</a>
         <a href="#industries">Industries</a>
       </div>
       <div class="fcol">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <a href="#why">Why Y Factor</a>
         <a href="#demo">Contact</a>
-        <a href="#top">About</a>
       </div>
       <div class="fcol">
-        <h4>Connect</h4>
-        <a href="https://www.linkedin.com" aria-label="Y Factor on LinkedIn">LinkedIn</a>
+        <h3>Connect</h3>
         <a href="mailto:hello@yfactor.ai">hello@yfactor.ai</a>
       </div>
     </div>

@@ -9,6 +9,14 @@
   var rmQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   function reduced() { return rmQuery.matches; }
 
+  /* Counters and utilization bars keep their real values in the markup
+     (crawlers and no-JS readers see actual numbers); zero them only when
+     they are about to animate. */
+  if (!reduced()) {
+    document.querySelectorAll('.count').forEach(function (c) { c.textContent = '0'; });
+    document.querySelectorAll('.bar-fill').forEach(function (b) { b.style.width = '0%'; });
+  }
+
   /* ---------- Nav: glass on scroll ---------- */
   var nav = document.getElementById('nav');
   function onNavScroll() {
@@ -16,6 +24,34 @@
   }
   window.addEventListener('scroll', onNavScroll, { passive: true });
   onNavScroll();
+
+  /* ---------- Nav: mark the section in view ---------- */
+  var spyLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
+  if (spyLinks.length && 'IntersectionObserver' in window) {
+    var spyMap = {};
+    spyLinks.forEach(function (a) { spyMap[a.getAttribute('href').slice(1)] = a; });
+    var spySections = Object.keys(spyMap);
+    var spyState = {};
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { spyState[e.target.id] = e.isIntersecting; });
+      var current = null;
+      for (var i = 0; i < spySections.length; i++) {
+        if (spyState[spySections[i]]) { current = spySections[i]; break; }
+      }
+      spyLinks.forEach(function (a) {
+        a.classList.remove('active');
+        a.removeAttribute('aria-current');
+      });
+      if (current) {
+        spyMap[current].classList.add('active');
+        spyMap[current].setAttribute('aria-current', 'true');
+      }
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    spySections.forEach(function (id) {
+      var sec = document.getElementById(id);
+      if (sec) spy.observe(sec);
+    });
+  }
 
   /* ---------- Mobile menu ---------- */
   var burger = document.getElementById('burger');
@@ -221,6 +257,11 @@
     elm.querySelectorAll('.bar-fill').forEach(function (b) {
       b.style.width = b.dataset.w || '0%';
     });
+    // Release the reveal transition once it has played — .reveal's
+    // transition/transform otherwise outranks card hover styles for good.
+    setTimeout(function () {
+      elm.classList.remove('reveal', 'in', 'd1', 'd2', 'd3', 'd4');
+    }, 1100);
   }
   if (reduced() || !('IntersectionObserver' in window)) {
     revealEls.forEach(activate);
@@ -241,7 +282,7 @@
     setTimeout(function () {
       document.querySelectorAll('.hr .count').forEach(runCounter);
       document.querySelectorAll('.hr svg .draw').forEach(function (d) { d.classList.add('in'); });
-    }, 1500);
+    }, 1100);
   }
 
   /* ---------- Downtime heatmap (deterministic) ---------- */
@@ -253,7 +294,7 @@
       'rgba(217,119,6,.55)',
       '#D97706'
     ];
-    for (var i = 0; i < 126; i++) {
+    for (var i = 0; i < 168; i++) { // 24 h × 7 days
       var v = Math.abs(Math.sin(i * 12.9898) * 43758.5453) % 1;
       var lvl = v < 0.62 ? 0 : v < 0.82 ? 1 : v < 0.94 ? 2 : 3;
       var cell = document.createElement('span');
@@ -270,6 +311,7 @@
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(function () {
+        if (reduced()) { heroArt.style.transform = ''; ticking = false; return; }
         var y = Math.min(window.scrollY, window.innerHeight);
         heroArt.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)';
         ticking = false;
@@ -278,24 +320,69 @@
   }
 
   /* ---------- Demo form ---------- */
-  var send = document.getElementById('f-send');
-  if (send) {
-    send.addEventListener('click', function () {
-      var card = document.getElementById('demoForm');
-      var inputs = [
-        document.getElementById('f-name'),
-        document.getElementById('f-co'),
-        document.getElementById('f-contact')
-      ];
-      var ok = true;
-      inputs.forEach(function (inp) {
-        if (!inp) return;
-        var empty = !inp.value.trim();
-        inp.classList.toggle('err', empty);
-        inp.setAttribute('aria-invalid', String(empty));
-        if (empty) ok = false;
+  var form = document.getElementById('demoForm');
+  if (form) {
+    var fields = [
+      { inp: document.getElementById('f-name'), err: document.getElementById('f-name-err'),
+        test: function (v) { return v.length > 0; } },
+      { inp: document.getElementById('f-co'), err: document.getElementById('f-co-err'),
+        test: function (v) { return v.length > 0; } },
+      { inp: document.getElementById('f-contact'), err: document.getElementById('f-contact-err'),
+        test: function (v) { return v.indexOf('@') > 0 || v.replace(/\D/g, '').length >= 7; } }
+    ];
+    var status = document.getElementById('okMsg');
+    var sendBtn = document.getElementById('f-send');
+    var sending = false;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (sending) return;
+      var firstBad = null;
+      fields.forEach(function (f) {
+        if (!f.inp) return;
+        var bad = !f.test(f.inp.value.trim());
+        f.inp.classList.toggle('err', bad);
+        f.inp.setAttribute('aria-invalid', String(bad));
+        if (f.err) f.err.hidden = !bad;
+        // describe the field by its error only while the error is shown
+        if (bad) { f.inp.setAttribute('aria-describedby', f.err.id); }
+        else { f.inp.removeAttribute('aria-describedby'); }
+        if (bad && !firstBad) firstBad = f.inp;
       });
-      if (ok && card) card.classList.add('sent');
+      if (firstBad) {
+        // announce even when focus is already inside the invalid field
+        status.textContent = 'Please fix the highlighted fields.';
+        firstBad.focus();
+        return;
+      }
+      if (form.elements._honey && form.elements._honey.value) return; // bot filled the honeypot
+
+      // aria-disabled (not disabled) so the focused button keeps focus while sending
+      sending = true;
+      sendBtn.setAttribute('aria-disabled', 'true');
+      sendBtn.textContent = 'Sending…';
+      status.textContent = '';
+      fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: fields[0].inp.value.trim(),
+          company: fields[1].inp.value.trim(),
+          contact: fields[2].inp.value.trim(),
+          _subject: 'Demo request — Y Factor site'
+        })
+      }).then(function (res) {
+        if (!res.ok) throw new Error('send failed');
+        form.classList.add('sent');
+        status.textContent = "Request received. We'll reach out within one business day.";
+        status.setAttribute('tabindex', '-1');
+        status.focus(); // the submit button is hidden now; park focus on the confirmation
+      }).catch(function () {
+        sending = false;
+        sendBtn.removeAttribute('aria-disabled');
+        sendBtn.textContent = 'Book a demo';
+        status.innerHTML = 'Could not send right now. Email us at <a href="mailto:hello@yfactor.ai">hello@yfactor.ai</a> and we’ll take it from there.';
+      });
     });
   }
 
