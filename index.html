@@ -12,10 +12,16 @@
 <meta property="og:title" content="Y Factor — Ask Y first.">
 <meta property="og:description" content="Agentic AI for manufacturing data. Agents that ask why first, trace answers through machine and production data, and turn them into decisions.">
 <meta property="og:url" content="https://moganz.github.io/yfactor/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://moganz.github.io/yfactor/assets/og-cover.png">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Y Factor — Ask Y first.">
 <meta name="twitter:description" content="Agentic AI for manufacturing data. Agents that ask why first, trace answers through machine and production data, and turn them into decisions.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111111'/%3E%3Cpath d='M10 7l6 7 6-7' stroke='%23F5EFE6' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 14v6' stroke='%23F5EFE6' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='25.5' r='2.6' fill='%23D97706'/%3E%3C/svg%3E">
+<meta name="twitter:image" content="https://moganz.github.io/yfactor/assets/og-cover.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,6 +32,7 @@
   "@type": "Organization",
   "name": "Y Factor",
   "url": "https://moganz.github.io/yfactor/",
+  "logo": "https://moganz.github.io/yfactor/assets/favicon-512.png",
   "email": "hello@yfactor.ai",
   "slogan": "Ask Y first.",
   "description": "Agentic AI for manufacturing data comprehension. Agents that ask why first, trace answers through machine and production data, and turn them into decisions."
@@ -50,11 +57,11 @@
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a class="brand" href="#top" aria-label="Y Factor home">
-      <!-- The Y that asks: a question mark's anatomy — the Y suspended over its dot. Dot is always Ignition. -->
-      <svg class="brand-mark" viewBox="0 0 26 30" fill="none" aria-hidden="true">
-        <path d="M6 4 L13 12.5 L20 4" stroke="#111111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M13 12.5 V19.5" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
-        <circle cx="13" cy="26" r="2.6" fill="#D97706"/>
+      <!-- The Y that asks: a question mark's anatomy — the Y suspended clear of its dot (kit v2.1: stem to 58, dot at 79, 6-unit gap). Dot is always Ember. -->
+      <svg class="brand-mark" viewBox="20 10 56 80" fill="none" aria-hidden="true">
+        <path d="M28 18 L48 42 L68 18" stroke="#141210" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M48 42 L48 58" stroke="#141210" stroke-width="12" stroke-linecap="round"/>
+        <circle cx="48" cy="79" r="9" fill="#9C4A16"/>
       </svg>
       <span class="brand-name">Factor</span>
     </a>
@@ -78,7 +85,7 @@
     <a href="#platform">Platform</a>
     <a href="#industries">Industries</a>
     <a href="#features">Features</a>
-    <a href="#demo" style="color:var(--ember-text);font-weight:700">Book a demo</a>
+    <a href="#demo" style="color:var(--accent);font-weight:700">Book a demo</a>
   </div>
 </header>
 
@@ -116,11 +123,11 @@
     <circle cx="720" cy="740" r="2.2" fill="#6B4F3B" opacity="0.3"/>
     <circle cx="720" cy="820" r="2.2" fill="#6B4F3B" opacity="0.3"/>
     <!-- data flow into and out of the junction -->
-    <path class="flow-line anim" d="M60 10 L720 620" stroke="#D97706" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="2 10"/>
-    <path class="flow-line anim" d="M1380 10 L720 620" stroke="#D97706" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="2 10"/>
-    <path class="flow-line anim" d="M720 620V900" stroke="#D97706" stroke-opacity="0.45" stroke-width="1.75" stroke-dasharray="3 9"/>
+    <path class="flow-line anim" d="M60 10 L720 620" stroke="#9C4A16" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="2 10"/>
+    <path class="flow-line anim" d="M1380 10 L720 620" stroke="#9C4A16" stroke-opacity="0.22" stroke-width="1.5" stroke-dasharray="2 10"/>
+    <path class="flow-line anim" d="M720 620V900" stroke="#9C4A16" stroke-opacity="0.5" stroke-width="1.75" stroke-dasharray="3 9"/>
     <!-- data packets travelling to the junction and down the stem -->
-    <circle class="anim" r="3" fill="#D97706" opacity="0.5">
+    <circle class="anim" r="3" fill="#9C4A16" opacity="0.5">
       <animateMotion dur="7s" repeatCount="indefinite" path="M60 10 L720 620"/>
     </circle>
     <circle class="anim" r="2.4" fill="#6B4F3B" opacity="0.4">
@@ -129,15 +136,15 @@
     <circle class="anim" r="3" fill="#6B4F3B" opacity="0.4">
       <animateMotion dur="8s" begin="-2.5s" repeatCount="indefinite" path="M1380 10 L720 620"/>
     </circle>
-    <circle class="anim" r="2.4" fill="#D97706" opacity="0.45">
+    <circle class="anim" r="2.4" fill="#9C4A16" opacity="0.45">
       <animateMotion dur="10s" begin="-6s" repeatCount="indefinite" path="M1280 80 L704 628"/>
     </circle>
-    <circle class="anim" r="3.4" fill="#D97706" opacity="0.65">
+    <circle class="anim" r="3.4" fill="#9C4A16" opacity="0.65">
       <animateMotion dur="3.8s" begin="-1s" repeatCount="indefinite" path="M720 620 L720 900"/>
     </circle>
     <!-- the junction: where the question gets asked -->
-    <circle cx="720" cy="620" r="4.5" fill="#D97706"/>
-    <circle class="anim" cx="720" cy="620" r="5" fill="none" stroke="#D97706" stroke-width="1.5">
+    <circle cx="720" cy="620" r="4.5" fill="#9C4A16"/>
+    <circle class="anim" cx="720" cy="620" r="5" fill="none" stroke="#9C4A16" stroke-width="1.5">
       <animate attributeName="r" values="5;18" dur="2.6s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0.55;0" dur="2.6s" repeatCount="indefinite"/>
     </circle>
@@ -188,9 +195,9 @@
               <line x1="0" y1="28" x2="340" y2="28" stroke="#F0E9DC" stroke-width="1"/>
               <line x1="0" y1="56" x2="340" y2="56" stroke="#F0E9DC" stroke-width="1"/>
               <line x1="0" y1="84" x2="340" y2="84" stroke="#F0E9DC" stroke-width="1"/>
-              <path d="M0,86 C34,80 52,72 86,74 C120,76 138,58 172,60 C206,62 224,44 258,40 C292,36 316,26 340,22 L340,112 L0,112 Z" fill="rgba(217,119,6,.10)"/>
-              <path class="draw" pathLength="1" d="M0,86 C34,80 52,72 86,74 C120,76 138,58 172,60 C206,62 224,44 258,40 C292,36 316,26 340,22" fill="none" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="340" cy="22" r="3.6" fill="#D97706"/>
+              <path d="M0,86 C34,80 52,72 86,74 C120,76 138,58 172,60 C206,62 224,44 258,40 C292,36 316,26 340,22 L340,112 L0,112 Z" fill="rgba(156,74,22,.10)"/>
+              <path class="draw" pathLength="1" d="M0,86 C34,80 52,72 86,74 C120,76 138,58 172,60 C206,62 224,44 258,40 C292,36 316,26 340,22" fill="none" stroke="#9C4A16" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="340" cy="22" r="3.6" fill="#9C4A16"/>
             </svg>
           </div>
 
@@ -238,10 +245,11 @@
 
 <!-- ============ WHY Y FACTOR ============ -->
 <section class="sec why" id="why">
-  <svg class="ghost-y" width="340" height="420" viewBox="0 0 200 260" fill="none" aria-hidden="true">
-    <path d="M28 18 L100 120 L172 18" stroke="#6B4F3B" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M100 120 V200" stroke="#6B4F3B" stroke-width="13" stroke-linecap="round"/>
-    <circle cx="100" cy="238" r="11" fill="#6B4F3B"/>
+  <!-- Decorative ghost of the v2.1 mark (kit geometry ×2.5, stroke unified) -->
+  <svg class="ghost-y" width="336" height="480" viewBox="50 25 140 200" fill="none" aria-hidden="true">
+    <path d="M70 45 L120 105 L170 45" stroke="#6B4F3B" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M120 105 L120 145" stroke="#6B4F3B" stroke-width="30" stroke-linecap="round"/>
+    <circle cx="120" cy="197.5" r="22.5" fill="#6B4F3B"/>
   </svg>
   <div class="container">
     <!-- The take-apart, replayed where the story is told -->
@@ -278,30 +286,30 @@
           </defs>
           <rect width="480" height="420" rx="16" fill="url(#bgrid)"/>
           <!-- ghost Y -->
-          <path d="M96,52 L240,204 M384,52 L240,204 M240,204 V336" stroke="rgba(217,119,6,.08)" stroke-width="34" stroke-linecap="round" fill="none"/>
+          <path d="M96,52 L240,204 M384,52 L240,204 M240,204 V336" stroke="rgba(156,74,22,.08)" stroke-width="34" stroke-linecap="round" fill="none"/>
           <!-- arms + stem -->
           <path class="draw" pathLength="1" d="M96,52 L240,204" stroke="#6B4F3B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           <path class="draw" pathLength="1" d="M384,52 L240,204" stroke="#6B4F3B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           <path class="draw" pathLength="1" d="M240,204 V336" stroke="#6B4F3B" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           <!-- data packets on arms -->
-          <circle cx="132" cy="90" r="4" fill="#D97706"/><circle cx="168" cy="128" r="4" fill="#D97706" opacity=".7"/><circle cx="204" cy="166" r="4" fill="#D97706" opacity=".45"/>
+          <circle cx="132" cy="90" r="4" fill="#9C4A16"/><circle cx="168" cy="128" r="4" fill="#9C4A16" opacity=".7"/><circle cx="204" cy="166" r="4" fill="#9C4A16" opacity=".45"/>
           <circle cx="348" cy="90" r="4" fill="#6B4F3B"/><circle cx="312" cy="128" r="4" fill="#6B4F3B" opacity=".7"/><circle cx="276" cy="166" r="4" fill="#6B4F3B" opacity=".45"/>
           <!-- junction -->
-          <circle cx="240" cy="204" r="13" fill="none" stroke="#D97706" stroke-width="1.6" opacity=".55"/>
-          <circle cx="240" cy="204" r="6.5" fill="#D97706"/>
+          <circle cx="240" cy="204" r="13" fill="none" stroke="#9C4A16" stroke-width="1.6" opacity=".55"/>
+          <circle cx="240" cy="204" r="6.5" fill="#9C4A16"/>
           <!-- source labels -->
           <rect x="42" y="20" width="120" height="26" rx="13" fill="#F5EFE6" stroke="#E7DECF"/>
           <text x="102" y="37" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#6B4F3B">MACHINE DATA</text>
           <rect x="322" y="20" width="128" height="26" rx="13" fill="#F5EFE6" stroke="#E7DECF"/>
           <text x="386" y="37" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#6B4F3B">OPERATIONS DATA</text>
-          <text x="262" y="276" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="#93430A">DECISION</text>
+          <text x="262" y="276" font-family="Inter,sans-serif" font-size="11" font-weight="600" letter-spacing="1.5" fill="#9C4A16">DECISION</text>
           <!-- arrow into floor -->
           <path d="M240,336 l-6,-9 h12 z" fill="#6B4F3B"/>
           <!-- factory floor grid -->
           <g>
             <rect x="154" y="352" width="30" height="20" rx="5" fill="#fff" stroke="#E7DECF"/>
             <rect x="190" y="352" width="30" height="20" rx="5" fill="#F5EFE6" stroke="#E7DECF"/>
-            <rect x="226" y="352" width="30" height="20" rx="5" fill="#D97706" opacity=".85"/>
+            <rect x="226" y="352" width="30" height="20" rx="5" fill="#9C4A16" opacity=".85"/>
             <rect x="262" y="352" width="30" height="20" rx="5" fill="#fff" stroke="#E7DECF"/>
             <rect x="298" y="352" width="30" height="20" rx="5" fill="#F5EFE6" stroke="#E7DECF"/>
             <rect x="154" y="378" width="30" height="20" rx="5" fill="#F5EFE6" stroke="#E7DECF"/>
@@ -381,12 +389,12 @@
       <div class="panel reveal">
         <p class="num-label">Production output — units/day, last 30 days</p>
         <svg viewBox="0 0 720 230" width="100%" aria-hidden="true" style="margin-top:14px">
-          <line x1="0" y1="55" x2="720" y2="55" stroke="#242424"/><line x1="0" y1="110" x2="720" y2="110" stroke="#242424"/><line x1="0" y1="165" x2="720" y2="165" stroke="#242424"/>
+          <line x1="0" y1="55" x2="720" y2="55" stroke="#2A2622"/><line x1="0" y1="110" x2="720" y2="110" stroke="#2A2622"/><line x1="0" y1="165" x2="720" y2="165" stroke="#2A2622"/>
           <line x1="0" y1="70" x2="720" y2="70" stroke="#6B4F3B" stroke-width="1.4" stroke-dasharray="6 7" opacity=".8"/>
           <text x="712" y="62" text-anchor="end" font-family="Inter,sans-serif" font-size="10.5" fill="#A79B8D">TARGET</text>
-          <path d="M0,178 C60,170 90,156 150,158 C210,160 240,132 300,128 C360,124 390,142 450,120 C510,98 540,104 600,84 C650,68 690,62 720,56 L720,230 L0,230 Z" fill="rgba(217,119,6,.10)"/>
-          <path class="draw" pathLength="1" d="M0,178 C60,170 90,156 150,158 C210,160 240,132 300,128 C360,124 390,142 450,120 C510,98 540,104 600,84 C650,68 690,62 720,56" fill="none" stroke="#D97706" stroke-width="2.6" stroke-linecap="round"/>
-          <circle cx="720" cy="56" r="4" fill="#D97706"/>
+          <path d="M0,178 C60,170 90,156 150,158 C210,160 240,132 300,128 C360,124 390,142 450,120 C510,98 540,104 600,84 C650,68 690,62 720,56 L720,230 L0,230 Z" fill="rgba(233,142,68,.10)"/>
+          <path class="draw" pathLength="1" d="M0,178 C60,170 90,156 150,158 C210,160 240,132 300,128 C360,124 390,142 450,120 C510,98 540,104 600,84 C650,68 690,62 720,56" fill="none" stroke="#E98E44" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="720" cy="56" r="4" fill="#E98E44"/>
         </svg>
       </div>
       <div class="panel recs reveal d1">
@@ -409,7 +417,7 @@
       <div class="panel reveal d1">
         <p class="num-label">Downtime heatmap — hour × day, last 7 days</p>
         <div class="heat" id="heat" aria-hidden="true"></div>
-        <p class="legend">Low <i style="background:rgba(245,239,230,.07)"></i><i style="background:rgba(217,119,6,.25)"></i><i style="background:rgba(217,119,6,.55)"></i><i style="background:#D97706"></i> High</p>
+        <p class="legend">Low <i style="background:rgba(245,239,230,.07)"></i><i style="background:rgba(233,142,68,.25)"></i><i style="background:rgba(233,142,68,.55)"></i><i style="background:#E98E44"></i> High</p>
       </div>
     </div>
   </div>
@@ -513,8 +521,8 @@
             <span class="health-badge">Attention</span>
           </div>
           <svg class="spark" viewBox="0 0 300 70" fill="none" aria-hidden="true" preserveAspectRatio="none">
-            <path d="M0 52 30 50 60 53 90 46 120 48 150 40 180 42 210 32 240 34 270 22 300 18" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="300" cy="18" r="3.5" fill="#fff" stroke="#D97706" stroke-width="2"/>
+            <path d="M0 52 30 50 60 53 90 46 120 48 150 40 180 42 210 32 240 34 270 22 300 18" stroke="#9C4A16" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="300" cy="18" r="3.5" fill="#fff" stroke="#9C4A16" stroke-width="2"/>
           </svg>
           <div class="health-row">Drive motor running <b>9°C</b> above the fleet average</div>
           <div class="health-row">Belt wear probability <b>72%</b> · window <b>5–7 days</b></div>
@@ -665,10 +673,10 @@
     <div class="foot-grid">
       <div>
         <p class="foot-brand">
-          <svg width="24" height="28" viewBox="0 0 26 30" fill="none" aria-hidden="true">
-            <path d="M6 4 L13 12.5 L20 4" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13 12.5 V19.5" stroke="#F5EFE6" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="13" cy="26" r="2.6" fill="#D97706"/>
+          <svg width="20" height="28.5" viewBox="20 10 56 80" fill="none" aria-hidden="true">
+            <path d="M28 18 L48 42 L68 18" stroke="#F5EFE6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M48 42 L48 58" stroke="#F5EFE6" stroke-width="12" stroke-linecap="round"/>
+            <circle cx="48" cy="79" r="9" fill="#E98E44"/>
           </svg>
           <span aria-hidden="true">Factor</span><span class="sr-only">Y Factor</span>
         </p>
