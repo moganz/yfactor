@@ -69,10 +69,10 @@
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="#why">Why Y Factor</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="#platform">Platform</a></li>
+        <li><a href="#flow">How it works</a></li>
         <li><a href="#industries">Industries</a></li>
-        <li><a href="#features">Features</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </nav>
     <a class="btn btn-primary" href="#demo">Book a demo</a>
@@ -82,10 +82,10 @@
   </div>
   <div class="mmenu" id="mmenu">
     <a href="#why">Why Y Factor</a>
-    <a href="#services">Services</a>
     <a href="#platform">Platform</a>
+    <a href="#flow">How it works</a>
     <a href="#industries">Industries</a>
-    <a href="#features">Features</a>
+    <a href="#faq">FAQ</a>
     <a href="#demo" style="color:var(--accent);font-weight:700">Book a demo</a>
   </div>
 </header>
@@ -193,6 +193,7 @@
 
           <div class="chart-wrap">
             <p class="num-label">Production trend — units / hr, last 24 h</p>
+            <p class="sr-only">Sample data: output climbs steadily across the last 24 hours.</p>
             <svg viewBox="0 0 340 112" width="100%" height="112" aria-hidden="true">
               <line x1="0" y1="28" x2="340" y2="28" stroke="#F0E9DC" stroke-width="1"/>
               <line x1="0" y1="56" x2="340" y2="56" stroke="#F0E9DC" stroke-width="1"/>
@@ -402,6 +403,7 @@
     <div class="plat-grid">
       <div class="panel reveal">
         <p class="num-label">Production output — units/day, last 30 days</p>
+        <p class="sr-only">Sample data: daily output rises over the month and finishes above target.</p>
         <svg viewBox="0 0 720 230" width="100%" aria-hidden="true" style="margin-top:14px">
           <line x1="0" y1="55" x2="720" y2="55" stroke="#2A2622"/><line x1="0" y1="110" x2="720" y2="110" stroke="#2A2622"/><line x1="0" y1="165" x2="720" y2="165" stroke="#2A2622"/>
           <line x1="0" y1="70" x2="720" y2="70" stroke="#6B4F3B" stroke-width="1.4" stroke-dasharray="6 7" opacity=".8"/>
@@ -430,6 +432,7 @@
       </div>
       <div class="panel reveal d1">
         <p class="num-label">Downtime heatmap — hour × day, last 7 days</p>
+        <p class="sr-only">Sample data: downtime concentrates in a few isolated hour-of-day cells; most of the week stays low.</p>
         <div class="heat" id="heat" aria-hidden="true"></div>
         <p class="legend">Low <i style="background:rgba(245,239,230,.07)"></i><i style="background:rgba(233,142,68,.25)"></i><i style="background:rgba(233,142,68,.55)"></i><i style="background:#E98E44"></i> High</p>
         <p class="mock-note"><span class="mock-badge">Illustrative · sample plant data</span></p>
@@ -445,6 +448,7 @@
       <p class="eyebrow">Industries — where it runs</p>
       <h2>Built where things get made</h2>
       <p class="sub">One platform, models trained per vertical. A spinning mill and a bottling line don't fail the same way.</p>
+      <p class="sub">Deepest models first where yarn, textile, and fabric processes fail differently — general manufacturing runs on the same platform spine.</p>
     </div>
     <div class="ind-grid">
       <div class="ind reveal">
@@ -627,9 +631,10 @@
       <div>
         <p class="num-label">Integrations</p>
         <h3>Plugs into what you already run</h3>
+        <p class="intg-note">Named connectors are added per pilot.</p>
       </div>
       <div class="chips">
-        <span>ERP &amp; accounting</span><span>PLCs &amp; sensors — OPC-UA, Modbus</span><span>SCADA &amp; historians</span><span>Cloud or on-prem</span><span>iOS &amp; Android</span>
+        <span>PLCs &amp; sensors — OPC-UA, Modbus</span><span>ERP / MES — via API or export</span><span>SCADA &amp; historians</span><span>Cloud or on-prem</span><span>iOS &amp; Android</span>
       </div>
     </div>
 
@@ -811,13 +816,19 @@
           <a href="mailto:hello@yfactor.ai" aria-label="Email Y Factor">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4.5 7.5 12 13l7.5-5.5"/></svg>
           </a>
+          <!-- TODO: replace with the real Y Factor LinkedIn page URL -->
+          <a href="https://www.linkedin.com/" rel="noopener" aria-label="Y Factor on LinkedIn">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9z"/></svg>
+          </a>
         </div>
       </div>
       <div class="fcol">
         <h3>Product</h3>
         <a href="#platform">Platform</a>
         <a href="#services">Services</a>
+        <a href="#features">Features</a>
         <a href="#industries">Industries</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div class="fcol">
         <h3>Company</h3>
@@ -836,6 +847,11 @@
     </div>
   </div>
 </footer>
+
+<!-- Sticky mobile CTA (shown ≤640px; hidden while #demo is on screen or the menu is open) -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-primary" href="#demo">Book a demo</a>
+</div>
 
 <script src="script.js"></script>
 </body>
