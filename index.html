@@ -7,6 +7,7 @@
 <meta name="description" content="Y Factor is agentic AI for manufacturing data. Its agents ask why first, trace answers through machine and production data, and turn them into decisions your team can act on.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://moganz.github.io/yfactor/">
+<!-- When yfactor.ai is live: set canonical, og:url, and JSON-LD url/logo to https://yfactor.ai/ -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Y Factor">
 <meta property="og:title" content="Y Factor — Ask Y first.">
@@ -182,6 +183,7 @@
       <div class="dash">
         <div class="dash-head">
           <span class="dash-title"><span class="live-dot" aria-hidden="true"></span>Plant overview — live</span>
+          <span class="mock-badge">Illustrative · sample plant data</span>
           <span class="shift-chip">Shift B · 14:20</span>
         </div>
         <div class="dash-body">
@@ -204,7 +206,8 @@
           <div class="hero-rec">
             <p class="rec-tag">Why is Winder 4 vibrating?</p>
             <p>Vibration is trending <b>+8% over 6 hours</b>, consistent with early bearing wear. A bearing inspection within 48 hours avoids an unplanned stop.</p>
-            <a href="#demo">Create work order →</a>
+            <button type="button" class="btn-mock" disabled aria-disabled="true">Create work order →</button>
+            <span class="mock-hint">In product: drafts a CMMS work order for review</span>
           </div>
 
           <div class="status-row" role="group" aria-label="Machine status">
@@ -274,7 +277,7 @@
       <div class="why-copy reveal">
         <p class="eyebrow">Why Y Factor — the name is the method</p>
         <h2>Why is the Y first?</h2>
-        <p>Every factory runs on four factors: men, machines, materials, methods. Most plants still run without the fifth — the question <b>why</b>.</p>
+        <p>Every factory runs on four factors: people, machines, materials, methods. Most plants still run without the fifth — the question <b>why</b>.</p>
         <p>The name says how we work. Take <b>factory</b> apart and pull the <b>Y</b> to the front; what remains is <b>factor</b>. Y Factor puts the question before the plant: why did the line slow, why did quality drift, why does Shift B run different. Then it answers, with the data attached.</p>
       </div>
       <div class="reveal d2">
@@ -375,6 +378,7 @@
       <p class="eyebrow">The platform — one screen</p>
       <h2>One screen the whole plant agrees on</h2>
       <p class="sub">Efficiency, utilization, energy, downtime, and quality, updated live with the reasoning attached to each number.</p>
+      <span class="mock-badge">Illustrative · sample plant data</span>
     </div>
 
     <div class="kpi-row reveal">
@@ -418,6 +422,7 @@
         <p class="num-label">Downtime heatmap — hour × day, last 7 days</p>
         <div class="heat" id="heat" aria-hidden="true"></div>
         <p class="legend">Low <i style="background:rgba(245,239,230,.07)"></i><i style="background:rgba(233,142,68,.25)"></i><i style="background:rgba(233,142,68,.55)"></i><i style="background:#E98E44"></i> High</p>
+        <p class="mock-note"><span class="mock-badge">Illustrative · sample plant data</span></p>
       </div>
     </div>
   </div>
@@ -488,7 +493,7 @@
       </div>
       <div class="fvis reveal d1">
         <div class="floor">
-          <div class="floor-head"><span>Unit 2 · Ring Frames</span><span class="live">Live</span></div>
+          <div class="floor-head"><span>Unit 2 · Ring Frames</span><span class="mock-badge">Illustrative · sample plant data</span><span class="live">Live</span></div>
           <div class="floor-grid">
             <div class="machine">R-01<i></i></div>
             <div class="machine">R-02<i></i></div>
@@ -527,7 +532,9 @@
           <div class="health-row">Drive motor running <b>9°C</b> above the fleet average</div>
           <div class="health-row">Belt wear probability <b>72%</b> · window <b>5–7 days</b></div>
           <div class="health-divider"></div>
-          <a class="health-cta" href="#demo">Create work order →</a>
+          <button type="button" class="btn-mock" disabled aria-disabled="true">Create work order →</button>
+          <span class="mock-hint">In product: drafts a CMMS work order for review</span>
+          <p class="mock-note"><span class="mock-badge">Illustrative · sample plant data</span></p>
         </div>
       </div>
       <div class="fcopy reveal">
@@ -553,6 +560,7 @@
         <div class="fcard qa">
           <div class="bub">Why did Line 2 quality dip on Tuesday?</div>
           <div class="bub ai"><b>Humidity spiked between 11:40 and 13:10.</b> Tension on frames 3–4 drifted out of band during that window; recalibrate before Shift A.</div>
+          <p class="mock-note"><span class="mock-badge">Illustrative · sample plant data</span></p>
         </div>
       </div>
     </div>
@@ -566,6 +574,7 @@
             <span style="height:88%"></span><span style="height:95%"></span><span style="height:82%"></span><span style="height:90%"></span><span style="height:74%"></span><span class="on" style="height:63%"></span><span class="on" style="height:57%"></span>
           </div>
           <span class="badge">−6.2%<small>this month, same output</small></span>
+          <p class="mock-note"><span class="mock-badge">Illustrative · sample plant data</span></p>
         </div>
       </div>
       <div class="fcopy reveal">
