@@ -541,6 +541,13 @@ h3{font-weight:700;font-size:1.12rem;letter-spacing:-.01em}
 }
 .inp input:focus{outline:none;border-color:var(--accent)}
 .inp input.err{border-color:var(--error)}
+.inp select{
+  font-family:var(--font-body);font-size:1rem;color:var(--ink);
+  border:1.5px solid var(--line-strong);border-radius:10px;padding:13px 40px 13px 15px;
+  background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%236E6455' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  appearance:none;-webkit-appearance:none;cursor:pointer;transition:border-color .2s ease;
+}
+.inp select:focus{outline:none;border-color:var(--accent)}
 .err-msg{font-size:.82rem;font-weight:500;color:var(--error)}
 .form-card .btn{grid-column:1/-1;width:100%}
 .form-card .btn[aria-disabled="true"]{opacity:.6;cursor:default;transform:none}

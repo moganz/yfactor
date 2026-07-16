@@ -6,6 +6,10 @@
 (function () {
   'use strict';
 
+  /* Demo-form endpoint — the fetch URL and the <form action> fallback both
+     derive from this one constant. Swap it to move off FormSubmit. */
+  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/hello@yfactor.ai';
+
   var rmQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   function reduced() { return rmQuery.matches; }
 
@@ -362,17 +366,26 @@
       sendBtn.setAttribute('aria-disabled', 'true');
       sendBtn.textContent = 'Sending…';
       status.textContent = '';
-      fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+      var contactVal = fields[2].inp.value.trim();
+      var payload = {
+        name: fields[0].inp.value.trim(),
+        company: fields[1].inp.value.trim(),
+        contact: contactVal,
+        _subject: 'Demo request — Y Factor site',
+        _template: 'table'
+      };
+      if (contactVal.indexOf('@') > 0) payload._replyto = contactVal;
+      [['role', 'f-role'], ['plant_type', 'f-plant'], ['scale', 'f-scale']].forEach(function (opt) {
+        var el = document.getElementById(opt[1]);
+        if (el && el.value.trim()) payload[opt[0]] = el.value.trim();
+      });
+      fetch(FORM_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          name: fields[0].inp.value.trim(),
-          company: fields[1].inp.value.trim(),
-          contact: fields[2].inp.value.trim(),
-          _subject: 'Demo request — Y Factor site'
-        })
+        body: JSON.stringify(payload)
       }).then(function (res) {
         if (!res.ok) throw new Error('send failed');
+        form.reset();
         form.classList.add('sent');
         status.textContent = "Request received. We'll reach out within one business day.";
         status.setAttribute('tabindex', '-1');

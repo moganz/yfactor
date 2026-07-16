@@ -673,15 +673,45 @@
       </div>
       <div class="inp full">
         <label for="f-contact">Work email or phone</label>
-        <input id="f-contact" name="contact" type="text" placeholder="you@company.com or +91…" autocomplete="email" required>
+        <input id="f-contact" name="contact" type="text" placeholder="you@company.com or +91…" autocomplete="on" required>
         <p class="err-msg" id="f-contact-err" hidden>Enter an email address or phone number.</p>
       </div>
+      <div class="inp">
+        <label for="f-role">Role · optional</label>
+        <select id="f-role" name="role">
+          <option value="">Select…</option>
+          <option>Plant head</option>
+          <option>Operations</option>
+          <option>Maintenance</option>
+          <option>IT</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="inp">
+        <label for="f-plant">Plant type · optional</label>
+        <select id="f-plant" name="plant_type">
+          <option value="">Select…</option>
+          <option>Textile</option>
+          <option>Yarn</option>
+          <option>FMCG</option>
+          <option>Automotive</option>
+          <option>General</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="inp full">
+        <label for="f-scale">Approx. lines or machines · optional</label>
+        <input id="f-scale" name="scale" type="text" placeholder="e.g. 3 lines, 40 machines" autocomplete="off">
+      </div>
       <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true">
+      <input type="hidden" name="_subject" value="Demo request — Y Factor site">
+      <input type="hidden" name="_template" value="table">
       <button class="btn btn-primary" id="f-send" type="submit">Book a demo</button>
       <p class="form-consent">By submitting, you agree we may contact you about a demo. We do not sell your data. <a href="#privacy">Privacy</a></p>
       <p class="form-status" id="okMsg" role="status" aria-live="polite"></p>
     </form>
-    <p class="alt-cta reveal d4">Prefer email? Write to <a href="mailto:hello@yfactor.ai">hello@yfactor.ai</a></p>
+    <!-- TODO: point the calendar link at a real Cal.com / Calendly URL when one exists -->
+    <p class="alt-cta reveal d4">Prefer email? Write to <a href="mailto:hello@yfactor.ai">hello@yfactor.ai</a> · Prefer a calendar link? <a href="mailto:hello@yfactor.ai?subject=Y%20Factor%20demo%20%E2%80%94%20send%20me%20times">Ask for times</a></p>
   </div>
 </section>
 
