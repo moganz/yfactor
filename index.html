@@ -356,7 +356,8 @@
         <h3>Predictive Analytics</h3>
         <p>Forecast output, quality drift, and failures days before they reach the floor.</p>
       </div>
-      <div class="card reveal d2">
+      <div class="card featured reveal d2">
+        <span class="card-tag">Core</span>
         <div class="card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="7" width="14" height="11" rx="3"/><path d="M12 7V4"/><circle cx="12" cy="3" r="1"/><path d="M9 12h.01M15 12h.01"/><path d="M9.5 15.5c.8.6 4.2.6 5 0"/></svg></div>
         <h3>AI Agents</h3>
         <p>Agents that watch every line around the clock and ask why before a busy team has to.</p>
@@ -631,6 +632,20 @@
         <span>ERP &amp; accounting</span><span>PLCs &amp; sensors — OPC-UA, Modbus</span><span>SCADA &amp; historians</span><span>Cloud or on-prem</span><span>iOS &amp; Android</span>
       </div>
     </div>
+
+    <!-- Security & trust: only claims that hold today -->
+    <div class="trust reveal">
+      <div>
+        <p class="num-label">Security &amp; deployment</p>
+        <h3>Built for plant IT, not only the control room</h3>
+      </div>
+      <ul class="trust-list">
+        <li>Encrypted in transit — TLS between plant and platform</li>
+        <li>Access control per user, scoped to plant and role</li>
+        <li>Cloud, VPC, or on-prem — deployment model agreed per plant</li>
+        <li>Data path documented before a pilot starts; nothing moves unannounced</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -650,6 +665,42 @@
       <div class="node reveal d3"><span class="ncirc">05</span><span class="nlabel">Recommendation<small>with the evidence</small></span></div>
       <div class="node reveal d4"><span class="ncirc">06</span><span class="nlabel">Operator decision<small>human in the loop</small></span></div>
       <div class="node reveal d4"><span class="ncirc">07</span><span class="nlabel">Improved output<small>measured, not claimed</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="sec sec-tight tint-a" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow">FAQ — before a pilot</p>
+      <h2>Questions plants ask before a pilot</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>Does our data leave the plant?</summary>
+        <p>That's agreed per plant, in writing, before anything connects. A pilot can start with a scoped data path — cloud, VPC, or an on-prem conversation — and nothing moves until the path is on paper.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What if our machines are old?</summary>
+        <p>We start on the sensors you already have. Where coverage is thin, we retrofit only that gap — OPC-UA, Modbus, and gateway options cover most older machines.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Who acts on an alert?</summary>
+        <p>A person, every time. Agents watch, ask why, and recommend; your operators and supervisors decide. That's step 06 in the flow above, and it's there on purpose.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long to a first signal?</summary>
+        <p>We scope one line first and target measurable ROI inside 90 days. Useful signals usually land well before that — how fast depends on sensor coverage and process maturity.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What do you integrate with?</summary>
+        <p>ERP and MES via API or export, PLCs and sensors over OPC-UA and Modbus, and SCADA or historian data. Named connectors are added per pilot.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do you price a pilot?</summary>
+        <p>Scoped per line and per problem. Book a demo and you leave with a written pilot outline — scope, timeline, and the price on it.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -712,6 +763,17 @@
     </form>
     <!-- TODO: point the calendar link at a real Cal.com / Calendly URL when one exists -->
     <p class="alt-cta reveal d4">Prefer email? Write to <a href="mailto:hello@yfactor.ai">hello@yfactor.ai</a> · Prefer a calendar link? <a href="mailto:hello@yfactor.ai?subject=Y%20Factor%20demo%20%E2%80%94%20send%20me%20times">Ask for times</a></p>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="sec-tight team">
+  <div class="container team-inner reveal">
+    <p class="eyebrow">The team — who's building this</p>
+    <h2>Built for the factory floor</h2>
+    <p>Y Factor is a small team building agentic AI for manufacturing — plant-first, supervisors and maintenance before dashboards. We'd rather walk your line than present a deck about ourselves.</p>
+    <!-- TODO: replace with real founder names, titles, and LinkedIn URLs -->
+    <p class="team-links"><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a> · <a href="mailto:hello@yfactor.ai">hello@yfactor.ai</a></p>
   </div>
 </section>
 
