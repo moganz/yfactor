@@ -6,6 +6,8 @@
 <title>Y Factor — Ask Y first.</title>
 <meta name="description" content="Y Factor is agentic AI for manufacturing data. Its agents ask why first, trace answers through machine and production data, and turn them into decisions your team can act on.">
 <meta name="theme-color" content="#FFFFFF">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src https://formsubmit.co">
+<link rel="manifest" href="manifest.json">
 <link rel="canonical" href="https://moganz.github.io/yfactor/">
 <!-- When yfactor.ai is live: set canonical, og:url, and JSON-LD url/logo to https://yfactor.ai/ -->
 <meta property="og:type" content="website">
@@ -26,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.min.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,6 +57,62 @@
       "@type": "WebSite",
       "name": "Y Factor",
       "url": "https://moganz.github.io/yfactor/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does our data leave the plant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's agreed per plant, in writing, before anything connects. A pilot can start with a scoped data path — cloud, VPC, or an on-prem conversation — and nothing moves until the path is on paper."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if our machines are old?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We start on the sensors you already have. Where coverage is thin, we retrofit only that gap — OPC-UA, Modbus, and gateway options cover most older machines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who acts on an alert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A person, every time. Agents watch, ask why, and recommend; your operators and supervisors decide."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long to a first signal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We scope one line first and target measurable ROI inside 90 days. Useful signals usually land well before that — how fast depends on sensor coverage and process maturity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do you integrate with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ERP and MES via API or export, PLCs and sensors over OPC-UA and Modbus, and SCADA or historian data. Named connectors are added per pilot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you price a pilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Scoped per line and per problem. Book a demo and you leave with a written pilot outline — scope, timeline, and the price on it."
+      }
     }
   ]
 }
@@ -873,6 +931,6 @@
   <a class="btn btn-primary" href="#demo">Book a demo</a>
 </div>
 
-<script src="script.js"></script>
+<script src="script.min.js"></script>
 </body>
 </html>

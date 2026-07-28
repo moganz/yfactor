@@ -1,0 +1,32 @@
+{
+  "name": "Y Factor — Ask Y first.",
+  "short_name": "Y Factor",
+  "description": "Agentic AI for manufacturing data. Agents that ask why first, trace answers through machine and production data, and turn them into decisions.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FBF7F0",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "assets/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
